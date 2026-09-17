@@ -1,0 +1,13 @@
+{
+  "runId": "35219023391",
+  "attempt": "1",
+  "createdAt": "2026-09-17T12:05:15.950Z",
+  "baseURL": "http://127.0.0.1:4173/",
+  "exitCode": 1,
+  "demonstration": true,
+  "issue": null,
+  "pages": 2,
+  "viewportChecks": 6,
+  "findings": 150,
+  "suspects": 30
+}

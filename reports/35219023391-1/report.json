@@ -1,0 +1,5826 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-17T12:04:47.924Z",
+  "baseURL": "http://127.0.0.1:4173/",
+  "settings": {
+    "maxPages": 5,
+    "maxLinks": 200,
+    "viewports": [
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "failOn": "high",
+    "exclude": [
+      "/logout",
+      "/signout",
+      "/checkout",
+      "/cart",
+      "/delete",
+      "/remove",
+      "/purchase",
+      "/unsubscribe",
+      "/api/"
+    ],
+    "ignoreChecks": [],
+    "allowedResourceOrigins": []
+  },
+  "pages": [
+    {
+      "url": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "screenshots": [
+        {
+          "key": "2dc0524bf02d9838fd76",
+          "state": "page",
+          "file": "screenshots/2dc0524bf02d9838fd76.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "0df42ecdd80dafc4d498",
+          "state": "תפריט שבור",
+          "file": "screenshots/0df42ecdd80dafc4d498.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "ed090c3e62211aa6a606",
+          "state": "תפריט תקין",
+          "file": "screenshots/ed090c3e62211aa6a606.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "214edbc939329ab6537b",
+          "state": "שאלות נפוצות במקלדת",
+          "file": "screenshots/214edbc939329ab6537b.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "358e08212d598d95a702",
+          "state": "טופס עם הדמיה בלבד",
+          "file": "screenshots/358e08212d598d95a702.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [
+        {
+          "name": "תפריט שבור",
+          "status": "failed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "click",
+              "selector": "#menu-toggle"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#menu"
+            }
+          ],
+          "mockedRequests": [],
+          "error": "expect(locator).toBeVisible() failed\n\nLocator:  locator('#menu')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeVisible\" locator('#menu') with timeout 5000ms\n  - waiting for locator('#menu')\n    14 × locator resolved to <nav id=\"menu\" hidden=\"\">…</nav>\n       - unexpected value \"hidden\"\n",
+          "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+        },
+        {
+          "name": "תפריט תקין",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "press",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#safe-menu"
+            },
+            {
+              "number": 3,
+              "action": "expectAttribute",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 4,
+              "action": "press",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 5,
+              "action": "expectHidden",
+              "selector": "#safe-menu"
+            }
+          ],
+          "mockedRequests": [],
+          "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+        },
+        {
+          "name": "שאלות נפוצות במקלדת",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "press",
+              "selector": "#faq summary"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#answer"
+            },
+            {
+              "number": 3,
+              "action": "press",
+              "selector": "#faq summary"
+            },
+            {
+              "number": 4,
+              "action": "expectHidden",
+              "selector": "#answer"
+            }
+          ],
+          "mockedRequests": [],
+          "screenshot": "screenshots/214edbc939329ab6537b.png"
+        },
+        {
+          "name": "טופס עם הדמיה בלבד",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "fill",
+              "selector": "#email"
+            },
+            {
+              "number": 2,
+              "action": "click",
+              "selector": "#contact button"
+            },
+            {
+              "number": 3,
+              "action": "expectText",
+              "selector": "#status"
+            }
+          ],
+          "mockedRequests": [
+            {
+              "method": "POST",
+              "url": "/submit",
+              "hits": 1
+            }
+          ],
+          "screenshot": "screenshots/358e08212d598d95a702.png"
+        }
+      ],
+      "blocked": [
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/submit",
+          "method": "POST",
+          "resourceType": "fetch",
+          "reason": "explicit-mock",
+          "mocked": true,
+          "phase": "scenario"
+        }
+      ],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "http://127.0.0.1:4173/",
+      "scrollComplete": true,
+      "title": "מעבדת RTL",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#menu-toggle",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 253.34375,
+            "top": 213.21875,
+            "right": 366,
+            "bottom": 254.21875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#safe-menu-toggle",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 146.828125,
+            "top": 213.21875,
+            "right": 253.34375,
+            "bottom": 254.21875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#broken-link",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 180.078125,
+            "top": 546.3125,
+            "right": 266,
+            "bottom": 566.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 98.359375,
+            "top": 546.3125,
+            "right": 164.078125,
+            "bottom": 566.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(3)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 44.859375,
+            "top": 546.3125,
+            "right": 366,
+            "bottom": 587.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(4)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 239.875,
+            "top": 567.3125,
+            "right": 315.46875,
+            "bottom": 587.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(5)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 111.453125,
+            "top": 567.3125,
+            "right": 223.875,
+            "bottom": 587.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(4) > details:nth-of-type(1) > summary:nth-of-type(1)",
+          "tag": "SUMMARY",
+          "htmlType": null,
+          "rect": {
+            "left": 24,
+            "top": 625.3125,
+            "right": 366,
+            "bottom": 646.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#nameless",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 114,
+            "top": 683.3125,
+            "right": 366,
+            "bottom": 724.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#email",
+          "tag": "INPUT",
+          "htmlType": "email",
+          "rect": {
+            "left": 114,
+            "top": 724.3125,
+            "right": 366,
+            "bottom": 765.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(5) > form:nth-of-type(1) > button:nth-of-type(1)",
+          "tag": "BUTTON",
+          "htmlType": "submit",
+          "rect": {
+            "left": 253.3125,
+            "top": 765.3125,
+            "right": 366,
+            "bottom": 806.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#danger",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 200.4375,
+            "top": 719.3125,
+            "right": 366,
+            "bottom": 760.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "screenshots": [
+        {
+          "key": "38f8e00c776837549472",
+          "state": "page",
+          "file": "screenshots/38f8e00c776837549472.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "1b5bdb3237c4be8059bc",
+          "state": "תפריט שבור",
+          "file": "screenshots/1b5bdb3237c4be8059bc.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "b1c3e5b6c63052320805",
+          "state": "תפריט תקין",
+          "file": "screenshots/b1c3e5b6c63052320805.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "a7401a5571a1f0bc9e7f",
+          "state": "שאלות נפוצות במקלדת",
+          "file": "screenshots/a7401a5571a1f0bc9e7f.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "91b2b2698ebd5a8926cb",
+          "state": "טופס עם הדמיה בלבד",
+          "file": "screenshots/91b2b2698ebd5a8926cb.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [
+        {
+          "name": "תפריט שבור",
+          "status": "failed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "click",
+              "selector": "#menu-toggle"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#menu"
+            }
+          ],
+          "mockedRequests": [],
+          "error": "expect(locator).toBeVisible() failed\n\nLocator:  locator('#menu')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeVisible\" locator('#menu') with timeout 5000ms\n  - waiting for locator('#menu')\n    14 × locator resolved to <nav id=\"menu\" hidden=\"\">…</nav>\n       - unexpected value \"hidden\"\n",
+          "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+        },
+        {
+          "name": "תפריט תקין",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "press",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#safe-menu"
+            },
+            {
+              "number": 3,
+              "action": "expectAttribute",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 4,
+              "action": "press",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 5,
+              "action": "expectHidden",
+              "selector": "#safe-menu"
+            }
+          ],
+          "mockedRequests": [],
+          "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+        },
+        {
+          "name": "שאלות נפוצות במקלדת",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "press",
+              "selector": "#faq summary"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#answer"
+            },
+            {
+              "number": 3,
+              "action": "press",
+              "selector": "#faq summary"
+            },
+            {
+              "number": 4,
+              "action": "expectHidden",
+              "selector": "#answer"
+            }
+          ],
+          "mockedRequests": [],
+          "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+        },
+        {
+          "name": "טופס עם הדמיה בלבד",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "fill",
+              "selector": "#email"
+            },
+            {
+              "number": 2,
+              "action": "click",
+              "selector": "#contact button"
+            },
+            {
+              "number": 3,
+              "action": "expectText",
+              "selector": "#status"
+            }
+          ],
+          "mockedRequests": [
+            {
+              "method": "POST",
+              "url": "/submit",
+              "hits": 1
+            }
+          ],
+          "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+        }
+      ],
+      "blocked": [
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/submit",
+          "method": "POST",
+          "resourceType": "fetch",
+          "reason": "explicit-mock",
+          "mocked": true,
+          "phase": "scenario"
+        }
+      ],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "http://127.0.0.1:4173/",
+      "scrollComplete": true,
+      "title": "מעבדת RTL",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#menu-toggle",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 631.34375,
+            "top": 171.21875,
+            "right": 744,
+            "bottom": 212.21875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#safe-menu-toggle",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 524.828125,
+            "top": 171.21875,
+            "right": 631.34375,
+            "bottom": 212.21875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#broken-link",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 558.078125,
+            "top": 504.3125,
+            "right": 644,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 476.359375,
+            "top": 504.3125,
+            "right": 542.078125,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(3)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 383.328125,
+            "top": 504.3125,
+            "right": 460.359375,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(4)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 291.734375,
+            "top": 504.3125,
+            "right": 367.328125,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(5)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 163.3125,
+            "top": 504.3125,
+            "right": 275.734375,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(4) > details:nth-of-type(1) > summary:nth-of-type(1)",
+          "tag": "SUMMARY",
+          "htmlType": null,
+          "rect": {
+            "left": 24,
+            "top": 562.3125,
+            "right": 744,
+            "bottom": 583.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#nameless",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 492,
+            "top": 620.3125,
+            "right": 744,
+            "bottom": 661.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#email",
+          "tag": "INPUT",
+          "htmlType": "email",
+          "rect": {
+            "left": 193.125,
+            "top": 620.3125,
+            "right": 445.125,
+            "bottom": 661.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(5) > form:nth-of-type(1) > button:nth-of-type(1)",
+          "tag": "BUTTON",
+          "htmlType": "submit",
+          "rect": {
+            "left": 80.4375,
+            "top": 620.3125,
+            "right": 193.125,
+            "bottom": 661.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#danger",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 578.4375,
+            "top": 700.3125,
+            "right": 744,
+            "bottom": 741.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "screenshots": [
+        {
+          "key": "343a03ad6e01407ce90b",
+          "state": "page",
+          "file": "screenshots/343a03ad6e01407ce90b.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "6a3a3af9e43ed370b7bf",
+          "state": "תפריט שבור",
+          "file": "screenshots/6a3a3af9e43ed370b7bf.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "302c341cf89f00afba9b",
+          "state": "תפריט תקין",
+          "file": "screenshots/302c341cf89f00afba9b.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "758fd16ddaee51bcc34d",
+          "state": "שאלות נפוצות במקלדת",
+          "file": "screenshots/758fd16ddaee51bcc34d.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        },
+        {
+          "key": "9f6d9954b6b251560f1f",
+          "state": "טופס עם הדמיה בלבד",
+          "file": "screenshots/9f6d9954b6b251560f1f.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [
+        {
+          "name": "תפריט שבור",
+          "status": "failed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "click",
+              "selector": "#menu-toggle"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#menu"
+            }
+          ],
+          "mockedRequests": [],
+          "error": "expect(locator).toBeVisible() failed\n\nLocator:  locator('#menu')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeVisible\" locator('#menu') with timeout 5000ms\n  - waiting for locator('#menu')\n    14 × locator resolved to <nav id=\"menu\" hidden=\"\">…</nav>\n       - unexpected value \"hidden\"\n",
+          "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+        },
+        {
+          "name": "תפריט תקין",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "press",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#safe-menu"
+            },
+            {
+              "number": 3,
+              "action": "expectAttribute",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 4,
+              "action": "press",
+              "selector": "#safe-menu-toggle"
+            },
+            {
+              "number": 5,
+              "action": "expectHidden",
+              "selector": "#safe-menu"
+            }
+          ],
+          "mockedRequests": [],
+          "screenshot": "screenshots/302c341cf89f00afba9b.png"
+        },
+        {
+          "name": "שאלות נפוצות במקלדת",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "press",
+              "selector": "#faq summary"
+            },
+            {
+              "number": 2,
+              "action": "expectVisible",
+              "selector": "#answer"
+            },
+            {
+              "number": 3,
+              "action": "press",
+              "selector": "#faq summary"
+            },
+            {
+              "number": 4,
+              "action": "expectHidden",
+              "selector": "#answer"
+            }
+          ],
+          "mockedRequests": [],
+          "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+        },
+        {
+          "name": "טופס עם הדמיה בלבד",
+          "status": "passed",
+          "steps": [
+            {
+              "number": 1,
+              "action": "fill",
+              "selector": "#email"
+            },
+            {
+              "number": 2,
+              "action": "click",
+              "selector": "#contact button"
+            },
+            {
+              "number": 3,
+              "action": "expectText",
+              "selector": "#status"
+            }
+          ],
+          "mockedRequests": [
+            {
+              "method": "POST",
+              "url": "/submit",
+              "hits": 1
+            }
+          ],
+          "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+        }
+      ],
+      "blocked": [
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/offline",
+          "method": "GET",
+          "reason": "network-error",
+          "error": "route.fetch: socket hang up",
+          "phase": "scan"
+        },
+        {
+          "url": "http://127.0.0.1:4173/submit",
+          "method": "POST",
+          "resourceType": "fetch",
+          "reason": "explicit-mock",
+          "mocked": true,
+          "phase": "scenario"
+        }
+      ],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "http://127.0.0.1:4173/",
+      "scrollComplete": true,
+      "title": "מעבדת RTL",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#menu-toggle",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 1107.34375,
+            "top": 171.21875,
+            "right": 1220,
+            "bottom": 212.21875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#safe-menu-toggle",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 1000.828125,
+            "top": 171.21875,
+            "right": 1107.34375,
+            "bottom": 212.21875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#broken-link",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 1034.078125,
+            "top": 504.3125,
+            "right": 1120,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 952.359375,
+            "top": 504.3125,
+            "right": 1018.078125,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(3)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 859.328125,
+            "top": 504.3125,
+            "right": 936.359375,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(4)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 767.734375,
+            "top": 504.3125,
+            "right": 843.328125,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(5)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 639.3125,
+            "top": 504.3125,
+            "right": 751.734375,
+            "bottom": 524.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(4) > details:nth-of-type(1) > summary:nth-of-type(1)",
+          "tag": "SUMMARY",
+          "htmlType": null,
+          "rect": {
+            "left": 220,
+            "top": 562.3125,
+            "right": 1220,
+            "bottom": 583.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#nameless",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 968,
+            "top": 620.3125,
+            "right": 1220,
+            "bottom": 661.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#email",
+          "tag": "INPUT",
+          "htmlType": "email",
+          "rect": {
+            "left": 669.125,
+            "top": 620.3125,
+            "right": 921.125,
+            "bottom": 661.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > section:nth-of-type(5) > form:nth-of-type(1) > button:nth-of-type(1)",
+          "tag": "BUTTON",
+          "htmlType": "submit",
+          "rect": {
+            "left": 556.4375,
+            "top": 620.3125,
+            "right": 669.125,
+            "bottom": 661.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#danger",
+          "tag": "BUTTON",
+          "htmlType": null,
+          "rect": {
+            "left": 1054.4375,
+            "top": 700.3125,
+            "right": 1220,
+            "bottom": 741.3125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4173/clean",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "screenshots": [
+        {
+          "key": "70d49ccdbe81c4ef40ae",
+          "state": "page",
+          "file": "screenshots/70d49ccdbe81c4ef40ae.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "http://127.0.0.1:4173/clean",
+      "scrollComplete": true,
+      "title": "מעבדת RTL",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 114,
+            "top": 286.03125,
+            "right": 366,
+            "bottom": 327.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 259.90625,
+            "top": 345.03125,
+            "right": 366,
+            "bottom": 365.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 246,
+            "top": 405.03125,
+            "right": 366,
+            "bottom": 426.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 114,
+            "top": 286.03125,
+            "right": 366,
+            "bottom": 327.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 259.90625,
+            "top": 345.03125,
+            "right": 366,
+            "bottom": 365.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 246,
+            "top": 405.03125,
+            "right": 366,
+            "bottom": 426.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 114,
+            "top": 286.03125,
+            "right": 366,
+            "bottom": 327.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 259.90625,
+            "top": 345.03125,
+            "right": 366,
+            "bottom": 365.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 246,
+            "top": 405.03125,
+            "right": 366,
+            "bottom": 426.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4173/clean",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "screenshots": [
+        {
+          "key": "fbea9178deee75e1c0df",
+          "state": "page",
+          "file": "screenshots/fbea9178deee75e1c0df.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "http://127.0.0.1:4173/clean",
+      "scrollComplete": true,
+      "title": "מעבדת RTL",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 366.640625,
+            "top": 255.03125,
+            "right": 618.640625,
+            "bottom": 296.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 637.90625,
+            "top": 314.03125,
+            "right": 744,
+            "bottom": 334.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 624,
+            "top": 374.03125,
+            "right": 744,
+            "bottom": 395.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 366.640625,
+            "top": 255.03125,
+            "right": 618.640625,
+            "bottom": 296.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 637.90625,
+            "top": 314.03125,
+            "right": 744,
+            "bottom": 334.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 624,
+            "top": 374.03125,
+            "right": 744,
+            "bottom": 395.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 366.640625,
+            "top": 255.03125,
+            "right": 618.640625,
+            "bottom": 296.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 637.90625,
+            "top": 314.03125,
+            "right": 744,
+            "bottom": 334.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 624,
+            "top": 374.03125,
+            "right": 744,
+            "bottom": 395.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "http://127.0.0.1:4173/clean",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "screenshots": [
+        {
+          "key": "2f6416f2c4a9a8243f42",
+          "state": "page",
+          "file": "screenshots/2f6416f2c4a9a8243f42.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "http://127.0.0.1:4173/clean",
+      "scrollComplete": true,
+      "title": "מעבדת RTL",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 842.640625,
+            "top": 255.03125,
+            "right": 1094.640625,
+            "bottom": 296.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 1113.90625,
+            "top": 314.03125,
+            "right": 1220,
+            "bottom": 334.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 1100,
+            "top": 374.03125,
+            "right": 1220,
+            "bottom": 395.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 842.640625,
+            "top": 255.03125,
+            "right": 1094.640625,
+            "bottom": 296.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 1113.90625,
+            "top": 314.03125,
+            "right": 1220,
+            "bottom": 334.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 1100,
+            "top": 374.03125,
+            "right": 1220,
+            "bottom": 395.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#good-name",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 842.640625,
+            "top": 255.03125,
+            "right": 1094.640625,
+            "bottom": 296.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > p:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 1113.90625,
+            "top": 314.03125,
+            "right": 1220,
+            "bottom": 334.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2)",
+          "tag": "DIV",
+          "htmlType": null,
+          "rect": {
+            "left": 1100,
+            "top": 374.03125,
+            "right": 1220,
+            "bottom": 395.03125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/missing-image.png",
+        "status": 404,
+        "type": "image"
+      },
+      "id": "F0001",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "location": {
+          "url": "http://127.0.0.1:4173/missing-image.png",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0002",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "request-failed",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/offline",
+        "method": "GET",
+        "error": "net::ERR_FAILED"
+      },
+      "id": "F0003",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: request-failed"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_FAILED",
+        "location": {
+          "url": "http://127.0.0.1:4173/offline",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0004",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/server-error",
+        "status": 500,
+        "type": "fetch"
+      },
+      "id": "F0005",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "location": {
+          "url": "http://127.0.0.1:4173/server-error",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0006",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "javascript-error",
+      "evidence": {
+        "message": "intentional-fixture-js-error"
+      },
+      "id": "F0007",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: javascript-error"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 390,
+        "scrollWidth": 524,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0008",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/e9ac522f5e1562025b15-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 366,
+        "width": 390,
+        "direction": "rtl"
+      },
+      "id": "F0009",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/105f95212f5bb5b28feb-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0010",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/5b5cb4a85311d97d7b89-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0011",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/720864e91a5e3494bf82-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0012",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0013",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0014",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0015",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "broken-fragment",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/#missing-anchor"
+      },
+      "id": "F0016",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+        "בדיקה: broken-fragment"
+      ],
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "scenario-failed",
+      "evidence": {
+        "error": "expect(locator).toBeVisible() failed\n\nLocator:  locator('#menu')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeVisible\" locator('#menu') with timeout 5000ms\n  - waiting for locator('#menu')\n    14 × locator resolved to <nav id=\"menu\" hidden=\"\">…</nav>\n       - unexpected value \"hidden\"\n",
+        "step": {
+          "number": 2,
+          "action": "expectVisible",
+          "selector": "#menu"
+        }
+      },
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/ ברוחב 390",
+        "הפעילו חסימת רשת ותשובות דמה לפי קובץ ההגדרות",
+        "1. click: #menu-toggle",
+        "2. expectVisible: #menu"
+      ],
+      "id": "F0017",
+      "occurrences": 1,
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 390,
+        "scrollWidth": 524,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0018",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 366,
+        "width": 390,
+        "direction": "rtl"
+      },
+      "id": "F0019",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0020",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0021",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0022",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0023",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0024",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט שבור",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0025",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/0df42ecdd80dafc4d498.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 390,
+        "scrollWidth": 524,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0026",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 366,
+        "width": 390,
+        "direction": "rtl"
+      },
+      "id": "F0027",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0028",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0029",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0030",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0031",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0032",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "תפריט תקין",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0033",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/ed090c3e62211aa6a606.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 390,
+        "scrollWidth": 524,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0034",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 366,
+        "width": 390,
+        "direction": "rtl"
+      },
+      "id": "F0035",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0036",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0037",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0038",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0039",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0040",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0041",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/214edbc939329ab6537b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 390,
+        "scrollWidth": 524,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0042",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 366,
+        "width": 390,
+        "direction": "rtl"
+      },
+      "id": "F0043",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0044",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0045",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0046",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0047",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0048",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0049",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/358e08212d598d95a702.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/missing-image.png",
+        "status": 404,
+        "type": "image"
+      },
+      "id": "F0050",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "location": {
+          "url": "http://127.0.0.1:4173/missing-image.png",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0051",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "request-failed",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/offline",
+        "method": "GET",
+        "error": "net::ERR_FAILED"
+      },
+      "id": "F0052",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: request-failed"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_FAILED",
+        "location": {
+          "url": "http://127.0.0.1:4173/offline",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0053",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/server-error",
+        "status": 500,
+        "type": "fetch"
+      },
+      "id": "F0054",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "location": {
+          "url": "http://127.0.0.1:4173/server-error",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0055",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "javascript-error",
+      "evidence": {
+        "message": "intentional-fixture-js-error"
+      },
+      "id": "F0056",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: javascript-error"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 768,
+        "scrollWidth": 902,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0057",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/e95c04b5fe00c7cdb763-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 744,
+        "width": 768,
+        "direction": "rtl"
+      },
+      "id": "F0058",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/833900b94aa03e02866d-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0059",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/cf2d296b77935678be2e-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0060",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/cd49b42da7644a621e61-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0061",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0062",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0063",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0064",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "broken-fragment",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/#missing-anchor"
+      },
+      "id": "F0065",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+        "בדיקה: broken-fragment"
+      ],
+      "screenshot": "screenshots/38f8e00c776837549472.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "scenario-failed",
+      "evidence": {
+        "error": "expect(locator).toBeVisible() failed\n\nLocator:  locator('#menu')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeVisible\" locator('#menu') with timeout 5000ms\n  - waiting for locator('#menu')\n    14 × locator resolved to <nav id=\"menu\" hidden=\"\">…</nav>\n       - unexpected value \"hidden\"\n",
+        "step": {
+          "number": 2,
+          "action": "expectVisible",
+          "selector": "#menu"
+        }
+      },
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/ ברוחב 768",
+        "הפעילו חסימת רשת ותשובות דמה לפי קובץ ההגדרות",
+        "1. click: #menu-toggle",
+        "2. expectVisible: #menu"
+      ],
+      "id": "F0066",
+      "occurrences": 1,
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 768,
+        "scrollWidth": 902,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0067",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 744,
+        "width": 768,
+        "direction": "rtl"
+      },
+      "id": "F0068",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0069",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0070",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0071",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0072",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0073",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט שבור",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0074",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/1b5bdb3237c4be8059bc.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 768,
+        "scrollWidth": 902,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0075",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 744,
+        "width": 768,
+        "direction": "rtl"
+      },
+      "id": "F0076",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0077",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0078",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0079",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0080",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0081",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "תפריט תקין",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0082",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/b1c3e5b6c63052320805.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 768,
+        "scrollWidth": 902,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0083",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 744,
+        "width": 768,
+        "direction": "rtl"
+      },
+      "id": "F0084",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0085",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0086",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0087",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0088",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0089",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0090",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/a7401a5571a1f0bc9e7f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 768,
+        "scrollWidth": 902,
+        "extraPixels": 134,
+        "rootOverflow": "visible"
+      },
+      "id": "F0091",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -134,
+        "right": 744,
+        "width": 768,
+        "direction": "rtl"
+      },
+      "id": "F0092",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0093",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0094",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0095",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0096",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0097",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0098",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/91b2b2698ebd5a8926cb.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/missing-image.png",
+        "status": 404,
+        "type": "image"
+      },
+      "id": "F0099",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "location": {
+          "url": "http://127.0.0.1:4173/missing-image.png",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0100",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "request-failed",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/offline",
+        "method": "GET",
+        "error": "net::ERR_FAILED"
+      },
+      "id": "F0101",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: request-failed"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_FAILED",
+        "location": {
+          "url": "http://127.0.0.1:4173/offline",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0102",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/server-error",
+        "status": 500,
+        "type": "fetch"
+      },
+      "id": "F0103",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+        "location": {
+          "url": "http://127.0.0.1:4173/server-error",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0104",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "javascript-error",
+      "evidence": {
+        "message": "intentional-fixture-js-error"
+      },
+      "id": "F0105",
+      "occurrences": 5,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: javascript-error"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 1440,
+        "scrollWidth": 1770,
+        "extraPixels": 330,
+        "rootOverflow": "visible"
+      },
+      "id": "F0106",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/2c75a4e7d8a2e7939a9e-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -330,
+        "right": 1220,
+        "width": 1440,
+        "direction": "rtl"
+      },
+      "id": "F0107",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/a225f45ac7bcb53fe343-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0108",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/f56e0727a0d5b363a6b7-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0109",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/f8eb40870d8bd1d92bdc-evidence.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0110",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0111",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0112",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0113",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "broken-fragment",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+      "evidence": {
+        "url": "http://127.0.0.1:4173/#missing-anchor"
+      },
+      "id": "F0114",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > a:nth-of-type(2)",
+        "בדיקה: broken-fragment"
+      ],
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "scenario-failed",
+      "evidence": {
+        "error": "expect(locator).toBeVisible() failed\n\nLocator:  locator('#menu')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toBeVisible\" locator('#menu') with timeout 5000ms\n  - waiting for locator('#menu')\n    14 × locator resolved to <nav id=\"menu\" hidden=\"\">…</nav>\n       - unexpected value \"hidden\"\n",
+        "step": {
+          "number": 2,
+          "action": "expectVisible",
+          "selector": "#menu"
+        }
+      },
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/ ברוחב 1440",
+        "הפעילו חסימת רשת ותשובות דמה לפי קובץ ההגדרות",
+        "1. click: #menu-toggle",
+        "2. expectVisible: #menu"
+      ],
+      "id": "F0115",
+      "occurrences": 1,
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 1440,
+        "scrollWidth": 1770,
+        "extraPixels": 330,
+        "rootOverflow": "visible"
+      },
+      "id": "F0116",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -330,
+        "right": 1220,
+        "width": 1440,
+        "direction": "rtl"
+      },
+      "id": "F0117",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0118",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0119",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0120",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0121",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0122",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט שבור",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0123",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/6a3a3af9e43ed370b7bf.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 1440,
+        "scrollWidth": 1770,
+        "extraPixels": 330,
+        "rootOverflow": "visible"
+      },
+      "id": "F0124",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -330,
+        "right": 1220,
+        "width": 1440,
+        "direction": "rtl"
+      },
+      "id": "F0125",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0126",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0127",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0128",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0129",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0130",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "תפריט תקין",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0131",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/302c341cf89f00afba9b.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 1440,
+        "scrollWidth": 1770,
+        "extraPixels": 330,
+        "rootOverflow": "visible"
+      },
+      "id": "F0132",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -330,
+        "right": 1220,
+        "width": 1440,
+        "direction": "rtl"
+      },
+      "id": "F0133",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0134",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0135",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0136",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0137",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0138",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "שאלות נפוצות במקלדת",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0139",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/758fd16ddaee51bcc34d.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "horizontal-scroll",
+      "selector": "html",
+      "evidence": {
+        "viewport": 1440,
+        "scrollWidth": 1770,
+        "extraPixels": 330,
+        "rootOverflow": "visible"
+      },
+      "id": "F0140",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב html",
+        "בדיקה: horizontal-scroll"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "outside-viewport",
+      "selector": "#overflow",
+      "evidence": {
+        "left": -330,
+        "right": 1220,
+        "width": 1440,
+        "direction": "rtl"
+      },
+      "id": "F0141",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #overflow",
+        "בדיקה: outside-viewport"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "suspected",
+      "check": "text-clipping",
+      "selector": "#clipped",
+      "evidence": {
+        "client": [
+          150,
+          21
+        ],
+        "scroll": [
+          570,
+          21
+        ],
+        "textOverflow": "clip",
+        "lineClamp": "none",
+        "note": "ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית."
+      },
+      "id": "F0142",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #clipped",
+        "בדיקה: text-clipping"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "image-broken",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png",
+        "complete": true,
+        "naturalWidth": 0
+      },
+      "id": "F0143",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-broken"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "image-alt-missing",
+      "selector": "#broken-image",
+      "evidence": {
+        "src": "http://127.0.0.1:4173/missing-image.png"
+      },
+      "id": "F0144",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-image",
+        "בדיקה: image-alt-missing"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "form-label-missing",
+      "selector": "#nameless",
+      "evidence": {
+        "tag": "INPUT",
+        "type": "text",
+        "placeholderIsNotLabel": true
+      },
+      "id": "F0145",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #nameless",
+        "בדיקה: form-label-missing"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "keyboard-unreachable",
+      "selector": "#unreachable",
+      "evidence": {
+        "role": "button",
+        "tabIndex": -1
+      },
+      "id": "F0146",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #unreachable",
+        "בדיקה: keyboard-unreachable"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "טופס עם הדמיה בלבד",
+      "severity": "low",
+      "certainty": "suspected",
+      "check": "heading-skip",
+      "selector": "body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+      "evidence": {
+        "previousLevel": 1,
+        "level": 3
+      },
+      "id": "F0147",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב body:nth-of-type(1) > section:nth-of-type(3) > h3:nth-of-type(1)",
+        "בדיקה: heading-skip"
+      ],
+      "screenshot": "screenshots/9f6d9954b6b251560f1f.png"
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "broken-link",
+      "selector": "#broken-link",
+      "screenshot": "screenshots/2dc0524bf02d9838fd76.png",
+      "evidence": {
+        "target": "http://127.0.0.1:4173/missing",
+        "finalURL": "http://127.0.0.1:4173/missing",
+        "status": 404
+      },
+      "id": "F0148",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב #broken-link",
+        "בדיקה: broken-link"
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "broken-link",
+      "selector": "#broken-link",
+      "screenshot": "screenshots/38f8e00c776837549472.png",
+      "evidence": {
+        "target": "http://127.0.0.1:4173/missing",
+        "finalURL": "http://127.0.0.1:4173/missing",
+        "status": 404
+      },
+      "id": "F0149",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב #broken-link",
+        "בדיקה: broken-link"
+      ]
+    },
+    {
+      "page": "http://127.0.0.1:4173/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "broken-link",
+      "selector": "#broken-link",
+      "screenshot": "screenshots/343a03ad6e01407ce90b.png",
+      "evidence": {
+        "target": "http://127.0.0.1:4173/missing",
+        "finalURL": "http://127.0.0.1:4173/missing",
+        "status": 404
+      },
+      "id": "F0150",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו http://127.0.0.1:4173/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב #broken-link",
+        "בדיקה: broken-link"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "url": "http://example.invalid/foreign.xml",
+      "reason": "sitemap-out-of-scope-or-excluded"
+    }
+  ],
+  "coverage": {
+    "sitemapDocuments": 2,
+    "linksChecked": 4,
+    "urlsVisited": 2,
+    "blockedRequests": 18,
+    "scenarioMode": "all-network-blocked-except-exact-mocks",
+    "truncated": []
+  },
+  "incomplete": false,
+  "browser": "153.0.8010.12",
+  "platform": "linux",
+  "finishedAt": "2026-09-17T12:05:15.945Z",
+  "exitCode": 1
+}

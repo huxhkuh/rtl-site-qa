@@ -1,0 +1,1224 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>דוח בדיקת אתר · RTL QA</title><style>
+  :root{font-family:Arial,"Segoe UI",sans-serif;color:#182f35;background:#f3f5f4;font-size:16px;line-height:1.65}*{box-sizing:border-box}body{margin:0}header{background:#103b42;color:white;padding:38px max(24px,calc((100vw - 1120px)/2))}header p{color:#c9dedb;margin-bottom:0}.brand{font-size:12px;letter-spacing:2px;color:#8ae0cb}h1{font-size:clamp(28px,5vw,42px);line-height:1.2;margin:14px 0}h2{margin-top:32px;font-size:23px}h3{margin:8px 0;font-size:20px}main{max-width:1168px;margin:0 auto;padding:24px}a{color:#006956;text-underline-offset:3px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-1px 0 24px}.stat{border-bottom:3px solid #147c70;background:white;padding:20px}.stat strong{display:block;font-size:32px;line-height:1.2}.muted{color:#536a70;font-size:14px}.notice{border-inline-start:4px solid #c38828;background:#fff9e9;padding:16px 20px}.notice p{margin:4px 0}.finding{background:white;border:1px solid #d5e0dd;border-radius:4px;padding:20px;margin:12px 0}.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.badge{font-size:12px;padding:3px 10px;border-radius:3px;background:#e8efed}.high,.critical{background:#ffe4df;color:#8c281b}.medium{background:#fff0c7;color:#735012}.location{font-size:14px;overflow-wrap:anywhere;color:#536a70}details{margin-top:14px}summary{cursor:pointer;color:#175c59}pre{background:#f3f6f5;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;text-align:left}table{border-collapse:collapse;width:100%;background:white}th,td{text-align:right;padding:12px;border-bottom:1px solid #d5e0dd;vertical-align:top;overflow-wrap:anywhere}th{background:#e5edea}.table{overflow:auto}button,select{font:inherit;padding:8px 12px;border:1px solid #a0b7b0;border-radius:3px;background:white;color:#183c39}button{cursor:pointer}footer{margin:40px 0;color:#536a70;font-size:14px}bdi{overflow-wrap:anywhere}img{max-width:100%}@media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}main{padding:16px}.stat{padding:14px}th,td{min-width:100px}header{padding:28px 20px}}@media print{header{color:#182f35;background:white}.filters{display:none}.finding{break-inside:avoid}}
+  </style></head><body><header><div class="brand">RTL / SITE QA</div><h1>בדיקת האתר, עם ראיות.</h1><p><bdi>http://127.0.0.1:4173/</bdi><br>2026-09-17T12:04:47.924Z · Chromium 153.0.8010.12</p></header><main>
+  <div class="stats"><div class="stat"><strong>2</strong>עמודים</div><div class="stat"><strong>6</strong>בדיקות עמוד ורוחב</div><div class="stat"><strong>120</strong>ממצאים אוטומטיים</div><div class="stat"><strong>30</strong>חשדות לבדיקה</div></div>
+  <div class="notice"><p><strong>נמצאו ממצאים שחוצים את סף הכישלון — קוד 1</strong> · סף: high</p><p>הדוח מכסה רק את העמודים, הרוחבים והתרחישים המפורטים. הוא אינו אישור לנגישות מלאה, לאבטחה או להתאמה לנטפרי. חשדות חזותיים אינם מכשילים את CI.</p></div>
+  <h2>ממצאים</h2><div class="row filters"><label>חומרה <select id="level"><option value="all">הכול</option><option value="critical">קריטית</option><option value="high">גבוהה</option><option value="medium">בינונית</option><option value="low">נמוכה</option><option value="info">מידע</option></select></label><label>סוג <select id="certainty"><option value="all">הכול</option><option value="observed">ממצא אוטומטי</option><option value="suspected">חשד לבדיקה</option></select></label><span id="visible-count" role="status"></span></div><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0001 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;status&quot;: 404,
+  &quot;type&quot;: &quot;image&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0002 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 404 (Not Found)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0003 · ממצא אוטומטי</span></div><h3>בקשת רשת נכשלה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;request-failed&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+  &quot;method&quot;: &quot;GET&quot;,
+  &quot;error&quot;: &quot;net::ERR_FAILED&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: request-failed</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0004 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_FAILED&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0005 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/server-error&quot;,
+  &quot;status&quot;: 500,
+  &quot;type&quot;: &quot;fetch&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0006 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 500 (Internal Server Error)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/server-error&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0007 · ממצא אוטומטי</span></div><h3>שגיאת JavaScript</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;javascript-error&quot;,
+  &quot;message&quot;: &quot;intentional-fixture-js-error&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: javascript-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0008 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/e9ac522f5e1562025b15-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 390,
+  &quot;scrollWidth&quot;: 524,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0009 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/105f95212f5bb5b28feb-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 366,
+  &quot;width&quot;: 390,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0010 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/5b5cb4a85311d97d7b89-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0011 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/720864e91a5e3494bf82-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0012 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0013 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0014 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0015 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0016 · ממצא אוטומטי</span></div><h3>עוגן חסר בעמוד</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-fragment&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; a:nth-of-type(2)&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/#missing-anchor&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; a:nth-of-type(2)</li><li>בדיקה: broken-fragment</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0017 · ממצא אוטומטי</span></div><h3>תרחיש נכשל</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;scenario-failed&quot;,
+  &quot;error&quot;: &quot;expect(locator).toBeVisible() failed\n\nLocator:  locator(&#39;#menu&#39;)\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \&quot;toBeVisible\&quot; locator(&#39;#menu&#39;) with timeout 5000ms\n  - waiting for locator(&#39;#menu&#39;)\n    14 × locator resolved to &lt;nav id=\&quot;menu\&quot; hidden=\&quot;\&quot;&gt;…&lt;/nav&gt;\n       - unexpected value \&quot;hidden\&quot;\n&quot;,
+  &quot;step&quot;: {
+    &quot;number&quot;: 2,
+    &quot;action&quot;: &quot;expectVisible&quot;,
+    &quot;selector&quot;: &quot;#menu&quot;
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/ ברוחב 390</li><li>הפעילו חסימת רשת ותשובות דמה לפי קובץ ההגדרות</li><li>1. click: #menu-toggle</li><li>2. expectVisible: #menu</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0018 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 390,
+  &quot;scrollWidth&quot;: 524,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0019 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 366,
+  &quot;width&quot;: 390,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0020 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0021 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0022 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0023 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0024 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0025 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט שבור</p><div class="row"><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0026 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 390,
+  &quot;scrollWidth&quot;: 524,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0027 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 366,
+  &quot;width&quot;: 390,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0028 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0029 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0030 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0031 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0032 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0033 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · תפריט תקין</p><div class="row"><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0034 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 390,
+  &quot;scrollWidth&quot;: 524,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0035 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 366,
+  &quot;width&quot;: 390,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0036 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0037 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0038 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0039 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0040 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0041 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0042 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 390,
+  &quot;scrollWidth&quot;: 524,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0043 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 366,
+  &quot;width&quot;: 390,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0044 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0045 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0046 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0047 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0048 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0049 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0050 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;status&quot;: 404,
+  &quot;type&quot;: &quot;image&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0051 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 404 (Not Found)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0052 · ממצא אוטומטי</span></div><h3>בקשת רשת נכשלה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;request-failed&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+  &quot;method&quot;: &quot;GET&quot;,
+  &quot;error&quot;: &quot;net::ERR_FAILED&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: request-failed</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0053 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_FAILED&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0054 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/server-error&quot;,
+  &quot;status&quot;: 500,
+  &quot;type&quot;: &quot;fetch&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0055 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 500 (Internal Server Error)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/server-error&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0056 · ממצא אוטומטי</span></div><h3>שגיאת JavaScript</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;javascript-error&quot;,
+  &quot;message&quot;: &quot;intentional-fixture-js-error&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: javascript-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0057 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/e95c04b5fe00c7cdb763-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 768,
+  &quot;scrollWidth&quot;: 902,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0058 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/833900b94aa03e02866d-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 744,
+  &quot;width&quot;: 768,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0059 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/cf2d296b77935678be2e-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0060 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/cd49b42da7644a621e61-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0061 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0062 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0063 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0064 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0065 · ממצא אוטומטי</span></div><h3>עוגן חסר בעמוד</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-fragment&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; a:nth-of-type(2)&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/#missing-anchor&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; a:nth-of-type(2)</li><li>בדיקה: broken-fragment</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0066 · ממצא אוטומטי</span></div><h3>תרחיש נכשל</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;scenario-failed&quot;,
+  &quot;error&quot;: &quot;expect(locator).toBeVisible() failed\n\nLocator:  locator(&#39;#menu&#39;)\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \&quot;toBeVisible\&quot; locator(&#39;#menu&#39;) with timeout 5000ms\n  - waiting for locator(&#39;#menu&#39;)\n    14 × locator resolved to &lt;nav id=\&quot;menu\&quot; hidden=\&quot;\&quot;&gt;…&lt;/nav&gt;\n       - unexpected value \&quot;hidden\&quot;\n&quot;,
+  &quot;step&quot;: {
+    &quot;number&quot;: 2,
+    &quot;action&quot;: &quot;expectVisible&quot;,
+    &quot;selector&quot;: &quot;#menu&quot;
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/ ברוחב 768</li><li>הפעילו חסימת רשת ותשובות דמה לפי קובץ ההגדרות</li><li>1. click: #menu-toggle</li><li>2. expectVisible: #menu</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0067 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 768,
+  &quot;scrollWidth&quot;: 902,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0068 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 744,
+  &quot;width&quot;: 768,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0069 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0070 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0071 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0072 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0073 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0074 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט שבור</p><div class="row"><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0075 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 768,
+  &quot;scrollWidth&quot;: 902,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0076 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 744,
+  &quot;width&quot;: 768,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0077 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0078 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0079 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0080 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0081 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0082 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · תפריט תקין</p><div class="row"><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0083 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 768,
+  &quot;scrollWidth&quot;: 902,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0084 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 744,
+  &quot;width&quot;: 768,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0085 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0086 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0087 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0088 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0089 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0090 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0091 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 768,
+  &quot;scrollWidth&quot;: 902,
+  &quot;extraPixels&quot;: 134,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0092 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -134,
+  &quot;right&quot;: 744,
+  &quot;width&quot;: 768,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0093 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0094 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0095 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0096 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0097 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0098 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0099 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;status&quot;: 404,
+  &quot;type&quot;: &quot;image&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0100 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 404 (Not Found)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0101 · ממצא אוטומטי</span></div><h3>בקשת רשת נכשלה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;request-failed&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+  &quot;method&quot;: &quot;GET&quot;,
+  &quot;error&quot;: &quot;net::ERR_FAILED&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: request-failed</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0102 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_FAILED&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0103 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/server-error&quot;,
+  &quot;status&quot;: 500,
+  &quot;type&quot;: &quot;fetch&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0104 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 500 (Internal Server Error)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;http://127.0.0.1:4173/server-error&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0105 · ממצא אוטומטי</span></div><h3>שגיאת JavaScript</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;javascript-error&quot;,
+  &quot;message&quot;: &quot;intentional-fixture-js-error&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: javascript-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0106 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/2c75a4e7d8a2e7939a9e-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 1440,
+  &quot;scrollWidth&quot;: 1770,
+  &quot;extraPixels&quot;: 330,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0107 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/a225f45ac7bcb53fe343-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -330,
+  &quot;right&quot;: 1220,
+  &quot;width&quot;: 1440,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0108 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/f56e0727a0d5b363a6b7-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0109 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/f8eb40870d8bd1d92bdc-evidence.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0110 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0111 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0112 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0113 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0114 · ממצא אוטומטי</span></div><h3>עוגן חסר בעמוד</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-fragment&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; a:nth-of-type(2)&quot;,
+  &quot;url&quot;: &quot;http://127.0.0.1:4173/#missing-anchor&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; a:nth-of-type(2)</li><li>בדיקה: broken-fragment</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0115 · ממצא אוטומטי</span></div><h3>תרחיש נכשל</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;scenario-failed&quot;,
+  &quot;error&quot;: &quot;expect(locator).toBeVisible() failed\n\nLocator:  locator(&#39;#menu&#39;)\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n  - Expect \&quot;toBeVisible\&quot; locator(&#39;#menu&#39;) with timeout 5000ms\n  - waiting for locator(&#39;#menu&#39;)\n    14 × locator resolved to &lt;nav id=\&quot;menu\&quot; hidden=\&quot;\&quot;&gt;…&lt;/nav&gt;\n       - unexpected value \&quot;hidden\&quot;\n&quot;,
+  &quot;step&quot;: {
+    &quot;number&quot;: 2,
+    &quot;action&quot;: &quot;expectVisible&quot;,
+    &quot;selector&quot;: &quot;#menu&quot;
+  }
+}</pre><ol><li>פתחו http://127.0.0.1:4173/ ברוחב 1440</li><li>הפעילו חסימת רשת ותשובות דמה לפי קובץ ההגדרות</li><li>1. click: #menu-toggle</li><li>2. expectVisible: #menu</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0116 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 1440,
+  &quot;scrollWidth&quot;: 1770,
+  &quot;extraPixels&quot;: 330,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0117 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -330,
+  &quot;right&quot;: 1220,
+  &quot;width&quot;: 1440,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0118 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0119 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0120 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0121 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0122 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0123 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט שבור</p><div class="row"><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0124 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 1440,
+  &quot;scrollWidth&quot;: 1770,
+  &quot;extraPixels&quot;: 330,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0125 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -330,
+  &quot;right&quot;: 1220,
+  &quot;width&quot;: 1440,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0126 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0127 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0128 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0129 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0130 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0131 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · תפריט תקין</p><div class="row"><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0132 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 1440,
+  &quot;scrollWidth&quot;: 1770,
+  &quot;extraPixels&quot;: 330,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0133 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -330,
+  &quot;right&quot;: 1220,
+  &quot;width&quot;: 1440,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0134 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0135 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0136 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0137 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0138 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0139 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · שאלות נפוצות במקלדת</p><div class="row"><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0140 · ממצא אוטומטי</span></div><h3>גלילה אופקית</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;horizontal-scroll&quot;,
+  &quot;selector&quot;: &quot;html&quot;,
+  &quot;viewport&quot;: 1440,
+  &quot;scrollWidth&quot;: 1770,
+  &quot;extraPixels&quot;: 330,
+  &quot;rootOverflow&quot;: &quot;visible&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב html</li><li>בדיקה: horizontal-scroll</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0141 · ממצא אוטומטי</span></div><h3>רכיב חורג מהמסך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;outside-viewport&quot;,
+  &quot;selector&quot;: &quot;#overflow&quot;,
+  &quot;left&quot;: -330,
+  &quot;right&quot;: 1220,
+  &quot;width&quot;: 1440,
+  &quot;direction&quot;: &quot;rtl&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #overflow</li><li>בדיקה: outside-viewport</li></ol></details></article><article class="finding" data-level="medium" data-certainty="suspected"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0142 · חשד לבדיקה אנושית</span></div><h3>חשד לטקסט חתוך</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;text-clipping&quot;,
+  &quot;selector&quot;: &quot;#clipped&quot;,
+  &quot;client&quot;: [
+    150,
+    21
+  ],
+  &quot;scroll&quot;: [
+    570,
+    21
+  ],
+  &quot;textOverflow&quot;: &quot;clip&quot;,
+  &quot;lineClamp&quot;: &quot;none&quot;,
+  &quot;note&quot;: &quot;ייתכן קיצור טקסט מכוון או line-clamp; נדרשת בדיקה אנושית.&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #clipped</li><li>בדיקה: text-clipping</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0143 · ממצא אוטומטי</span></div><h3>תמונה שלא נטענה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-broken&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;,
+  &quot;complete&quot;: true,
+  &quot;naturalWidth&quot;: 0
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-broken</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0144 · ממצא אוטומטי</span></div><h3>חסר מאפיין alt</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;image-alt-missing&quot;,
+  &quot;selector&quot;: &quot;#broken-image&quot;,
+  &quot;src&quot;: &quot;http://127.0.0.1:4173/missing-image.png&quot;
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-image</li><li>בדיקה: image-alt-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0145 · ממצא אוטומטי</span></div><h3>שדה ללא תווית מזוהה</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;form-label-missing&quot;,
+  &quot;selector&quot;: &quot;#nameless&quot;,
+  &quot;tag&quot;: &quot;INPUT&quot;,
+  &quot;type&quot;: &quot;text&quot;,
+  &quot;placeholderIsNotLabel&quot;: true
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #nameless</li><li>בדיקה: form-label-missing</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0146 · ממצא אוטומטי</span></div><h3>רכיב פעולה אינו נגיש ב־Tab</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;keyboard-unreachable&quot;,
+  &quot;selector&quot;: &quot;#unreachable&quot;,
+  &quot;role&quot;: &quot;button&quot;,
+  &quot;tabIndex&quot;: -1
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #unreachable</li><li>בדיקה: keyboard-unreachable</li></ol></details></article><article class="finding" data-level="low" data-certainty="suspected"><div class="row"><span class="badge low">נמוכה</span><span class="muted">F0147 · חשד לבדיקה אנושית</span></div><h3>דילוג ברמת כותרת</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · טופס עם הדמיה בלבד</p><div class="row"><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;heading-skip&quot;,
+  &quot;selector&quot;: &quot;body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)&quot;,
+  &quot;previousLevel&quot;: 1,
+  &quot;level&quot;: 3
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב body:nth-of-type(1) &gt; section:nth-of-type(3) &gt; h3:nth-of-type(1)</li><li>בדיקה: heading-skip</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0148 · ממצא אוטומטי</span></div><h3>קישור פנימי שבור</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 390px · page</p><div class="row"><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-link&quot;,
+  &quot;selector&quot;: &quot;#broken-link&quot;,
+  &quot;target&quot;: &quot;http://127.0.0.1:4173/missing&quot;,
+  &quot;finalURL&quot;: &quot;http://127.0.0.1:4173/missing&quot;,
+  &quot;status&quot;: 404
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב #broken-link</li><li>בדיקה: broken-link</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0149 · ממצא אוטומטי</span></div><h3>קישור פנימי שבור</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 768px · page</p><div class="row"><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-link&quot;,
+  &quot;selector&quot;: &quot;#broken-link&quot;,
+  &quot;target&quot;: &quot;http://127.0.0.1:4173/missing&quot;,
+  &quot;finalURL&quot;: &quot;http://127.0.0.1:4173/missing&quot;,
+  &quot;status&quot;: 404
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב #broken-link</li><li>בדיקה: broken-link</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0150 · ממצא אוטומטי</span></div><h3>קישור פנימי שבור</h3><p class="location"><bdi>http://127.0.0.1:4173/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-link&quot;,
+  &quot;selector&quot;: &quot;#broken-link&quot;,
+  &quot;target&quot;: &quot;http://127.0.0.1:4173/missing&quot;,
+  &quot;finalURL&quot;: &quot;http://127.0.0.1:4173/missing&quot;,
+  &quot;status&quot;: 404
+}</pre><ol><li>פתחו http://127.0.0.1:4173/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב #broken-link</li><li>בדיקה: broken-link</li></ol></details></article>
+  <h2>כיסוי וצילומי מסך</h2><div class="table"><table><thead><tr><th>עמוד / רוחב</th><th>סטטוס ותרחישים</th><th>השוואה חזותית</th></tr></thead><tbody><tr><td><bdi>http://127.0.0.1:4173/</bdi><br>390 × 844</td><td>הבדיקה הסתיימה<br>תפריט שבור: נכשל<br>תפריט תקין: עבר<br>שאלות נפוצות במקלדת: עבר<br>טופס עם הדמיה בלבד: עבר</td><td><a href="screenshots/2dc0524bf02d9838fd76.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">2dc0524bf02d9838fd76</small><br><a href="screenshots/0df42ecdd80dafc4d498.png" target="_blank" rel="noopener">תפריט שבור</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">0df42ecdd80dafc4d498</small><br><a href="screenshots/ed090c3e62211aa6a606.png" target="_blank" rel="noopener">תפריט תקין</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">ed090c3e62211aa6a606</small><br><a href="screenshots/214edbc939329ab6537b.png" target="_blank" rel="noopener">שאלות נפוצות במקלדת</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">214edbc939329ab6537b</small><br><a href="screenshots/358e08212d598d95a702.png" target="_blank" rel="noopener">טופס עם הדמיה בלבד</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">358e08212d598d95a702</small></td></tr><tr><td><bdi>http://127.0.0.1:4173/</bdi><br>768 × 1024</td><td>הבדיקה הסתיימה<br>תפריט שבור: נכשל<br>תפריט תקין: עבר<br>שאלות נפוצות במקלדת: עבר<br>טופס עם הדמיה בלבד: עבר</td><td><a href="screenshots/38f8e00c776837549472.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">38f8e00c776837549472</small><br><a href="screenshots/1b5bdb3237c4be8059bc.png" target="_blank" rel="noopener">תפריט שבור</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">1b5bdb3237c4be8059bc</small><br><a href="screenshots/b1c3e5b6c63052320805.png" target="_blank" rel="noopener">תפריט תקין</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">b1c3e5b6c63052320805</small><br><a href="screenshots/a7401a5571a1f0bc9e7f.png" target="_blank" rel="noopener">שאלות נפוצות במקלדת</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">a7401a5571a1f0bc9e7f</small><br><a href="screenshots/91b2b2698ebd5a8926cb.png" target="_blank" rel="noopener">טופס עם הדמיה בלבד</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">91b2b2698ebd5a8926cb</small></td></tr><tr><td><bdi>http://127.0.0.1:4173/</bdi><br>1440 × 900</td><td>הבדיקה הסתיימה<br>תפריט שבור: נכשל<br>תפריט תקין: עבר<br>שאלות נפוצות במקלדת: עבר<br>טופס עם הדמיה בלבד: עבר</td><td><a href="screenshots/343a03ad6e01407ce90b.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">343a03ad6e01407ce90b</small><br><a href="screenshots/6a3a3af9e43ed370b7bf.png" target="_blank" rel="noopener">תפריט שבור</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">6a3a3af9e43ed370b7bf</small><br><a href="screenshots/302c341cf89f00afba9b.png" target="_blank" rel="noopener">תפריט תקין</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">302c341cf89f00afba9b</small><br><a href="screenshots/758fd16ddaee51bcc34d.png" target="_blank" rel="noopener">שאלות נפוצות במקלדת</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">758fd16ddaee51bcc34d</small><br><a href="screenshots/9f6d9954b6b251560f1f.png" target="_blank" rel="noopener">טופס עם הדמיה בלבד</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">9f6d9954b6b251560f1f</small></td></tr><tr><td><bdi>http://127.0.0.1:4173/clean</bdi><br>390 × 844</td><td>הבדיקה הסתיימה<br></td><td><a href="screenshots/70d49ccdbe81c4ef40ae.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">70d49ccdbe81c4ef40ae</small></td></tr><tr><td><bdi>http://127.0.0.1:4173/clean</bdi><br>768 × 1024</td><td>הבדיקה הסתיימה<br></td><td><a href="screenshots/fbea9178deee75e1c0df.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">fbea9178deee75e1c0df</small></td></tr><tr><td><bdi>http://127.0.0.1:4173/clean</bdi><br>1440 × 900</td><td>הבדיקה הסתיימה<br></td><td><a href="screenshots/2f6416f2c4a9a8243f42.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">2f6416f2c4a9a8243f42</small></td></tr></tbody></table></div>
+  <h2>מה לא נבדק, ומה נחסם</h2><p>נבדקו 4 קישורים ייחודיים ו־2 קובצי sitemap. נרשמו 18 אירועי חסימה או הדמיה. בזמן תרחישים, כל קריאת רשת חסומה מלבד תשובות דמה שהוגדרו במפורש.</p><p>מגבלות שהופעלו: לא הופעלו. יש לבדוק ידנית קיצורי טקסט מכוונים, איכות טקסט חלופי, סדר קריאה, קורא מסך, ניגודיות ומיקוד בכל המסלולים.</p>
+  <details><summary>הגדרות, חריגות וחסימות</summary><pre dir="ltr">{
+  &quot;settings&quot;: {
+    &quot;maxPages&quot;: 5,
+    &quot;maxLinks&quot;: 200,
+    &quot;viewports&quot;: [
+      {
+        &quot;name&quot;: &quot;mobile&quot;,
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      {
+        &quot;name&quot;: &quot;tablet&quot;,
+        &quot;width&quot;: 768,
+        &quot;height&quot;: 1024
+      },
+      {
+        &quot;name&quot;: &quot;desktop&quot;,
+        &quot;width&quot;: 1440,
+        &quot;height&quot;: 900
+      }
+    ],
+    &quot;failOn&quot;: &quot;high&quot;,
+    &quot;exclude&quot;: [
+      &quot;/logout&quot;,
+      &quot;/signout&quot;,
+      &quot;/checkout&quot;,
+      &quot;/cart&quot;,
+      &quot;/delete&quot;,
+      &quot;/remove&quot;,
+      &quot;/purchase&quot;,
+      &quot;/unsubscribe&quot;,
+      &quot;/api/&quot;
+    ],
+    &quot;ignoreChecks&quot;: [],
+    &quot;allowedResourceOrigins&quot;: []
+  },
+  &quot;skipped&quot;: [
+    {
+      &quot;url&quot;: &quot;http://example.invalid/foreign.xml&quot;,
+      &quot;reason&quot;: &quot;sitemap-out-of-scope-or-excluded&quot;
+    }
+  ],
+  &quot;network&quot;: [
+    {
+      &quot;page&quot;: &quot;http://127.0.0.1:4173/&quot;,
+      &quot;width&quot;: 390,
+      &quot;blocked&quot;: [
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/submit&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;fetch&quot;,
+          &quot;reason&quot;: &quot;explicit-mock&quot;,
+          &quot;mocked&quot;: true,
+          &quot;phase&quot;: &quot;scenario&quot;
+        }
+      ]
+    },
+    {
+      &quot;page&quot;: &quot;http://127.0.0.1:4173/&quot;,
+      &quot;width&quot;: 768,
+      &quot;blocked&quot;: [
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/submit&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;fetch&quot;,
+          &quot;reason&quot;: &quot;explicit-mock&quot;,
+          &quot;mocked&quot;: true,
+          &quot;phase&quot;: &quot;scenario&quot;
+        }
+      ]
+    },
+    {
+      &quot;page&quot;: &quot;http://127.0.0.1:4173/&quot;,
+      &quot;width&quot;: 1440,
+      &quot;blocked&quot;: [
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/offline&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;reason&quot;: &quot;network-error&quot;,
+          &quot;error&quot;: &quot;route.fetch: socket hang up&quot;,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;http://127.0.0.1:4173/submit&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;fetch&quot;,
+          &quot;reason&quot;: &quot;explicit-mock&quot;,
+          &quot;mocked&quot;: true,
+          &quot;phase&quot;: &quot;scenario&quot;
+        }
+      ]
+    },
+    {
+      &quot;page&quot;: &quot;http://127.0.0.1:4173/clean&quot;,
+      &quot;width&quot;: 390,
+      &quot;blocked&quot;: []
+    },
+    {
+      &quot;page&quot;: &quot;http://127.0.0.1:4173/clean&quot;,
+      &quot;width&quot;: 768,
+      &quot;blocked&quot;: []
+    },
+    {
+      &quot;page&quot;: &quot;http://127.0.0.1:4173/clean&quot;,
+      &quot;width&quot;: 1440,
+      &quot;blocked&quot;: []
+    }
+  ]
+}</pre></details><footer><a href="report.json">הורדת הדוח כ־JSON</a> · צילומים משקפים את סביבת הבדיקה ואת החסימות שהוגדרו. אין תמונת ייחוס מאושרת? ההשוואה החזותית אינה מוכרעת.</footer></main>
+  <script>const update=()=>{let n=0;document.querySelectorAll('.finding').forEach(el=>{el.hidden=!(level.value==='all'||el.dataset.level===level.value)||!(certainty.value==='all'||el.dataset.certainty===certainty.value);if(!el.hidden)n++});document.getElementById('visible-count').textContent=n+' ממצאים מוצגים'};const level=document.getElementById('level'),certainty=document.getElementById('certainty');level.addEventListener('change',update);certainty.addEventListener('change',update);update();</script></body></html>
