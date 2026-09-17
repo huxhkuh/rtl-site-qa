@@ -1,0 +1,648 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-17T12:09:20.365Z",
+  "baseURL": "https://huxhkuh.github.io/rtl-site-qa/",
+  "settings": {
+    "maxPages": 1,
+    "maxLinks": 5,
+    "viewports": [
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "failOn": "high",
+    "exclude": [
+      "/logout",
+      "/signout",
+      "/checkout",
+      "/cart",
+      "/delete",
+      "/remove",
+      "/purchase",
+      "/unsubscribe",
+      "/api/"
+    ],
+    "ignoreChecks": [],
+    "allowedResourceOrigins": []
+  },
+  "pages": [
+    {
+      "url": "https://huxhkuh.github.io/rtl-site-qa/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "screenshots": [
+        {
+          "key": "f8ac3f74399f755edeb2",
+          "state": "page",
+          "file": "screenshots/f8ac3f74399f755edeb2.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "https://huxhkuh.github.io/rtl-site-qa/",
+      "scrollComplete": true,
+      "title": "בדיקת איכות לאתרים · RTL QA",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#repository",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 35,
+            "top": 238.03125,
+            "right": 184.109375,
+            "bottom": 264.421875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#base-url",
+          "tag": "INPUT",
+          "htmlType": "url",
+          "rect": {
+            "left": 35,
+            "top": 406.9375,
+            "right": 355,
+            "bottom": 457.328125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#pages",
+          "tag": "TEXTAREA",
+          "htmlType": null,
+          "rect": {
+            "left": 35,
+            "top": 503.71875,
+            "right": 355,
+            "bottom": 626.71875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#sitemap",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 35,
+            "top": 728.59375,
+            "right": 355,
+            "bottom": 778.984375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#max-pages",
+          "tag": "INPUT",
+          "htmlType": "number",
+          "rect": {
+            "left": 201,
+            "top": 793.375,
+            "right": 355,
+            "bottom": 843.765625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#fail-on",
+          "tag": "SELECT",
+          "htmlType": null,
+          "rect": {
+            "left": 35,
+            "top": 793.375,
+            "right": 189,
+            "bottom": 836.375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#crawl",
+          "tag": "INPUT",
+          "htmlType": "checkbox",
+          "rect": {
+            "left": 339,
+            "top": 415.765625,
+            "right": 352,
+            "bottom": 428.765625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > form:nth-of-type(1) > details:nth-of-type(1) > summary:nth-of-type(1)",
+          "tag": "SUMMARY",
+          "htmlType": null,
+          "rect": {
+            "left": 35,
+            "top": 481.546875,
+            "right": 355,
+            "bottom": 507.9375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#consent",
+          "tag": "INPUT",
+          "htmlType": "checkbox",
+          "rect": {
+            "left": 339,
+            "top": 549.9375,
+            "right": 352,
+            "bottom": 562.9375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#submit",
+          "tag": "BUTTON",
+          "htmlType": "submit",
+          "rect": {
+            "left": 69.15625,
+            "top": 655.109375,
+            "right": 355,
+            "bottom": 707.5
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#actions",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 268.515625,
+            "top": 723.5,
+            "right": 355,
+            "bottom": 749.890625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#refresh",
+          "tag": "BUTTON",
+          "htmlType": "button",
+          "rect": {
+            "left": 14,
+            "top": 401.171875,
+            "right": 127.765625,
+            "bottom": 443.5625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "https://huxhkuh.github.io/rtl-site-qa/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "screenshots": [
+        {
+          "key": "c5099bffacdfa58bbe07",
+          "state": "page",
+          "file": "screenshots/c5099bffacdfa58bbe07.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "https://huxhkuh.github.io/rtl-site-qa/",
+      "scrollComplete": true,
+      "title": "בדיקת איכות לאתרים · RTL QA",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#repository",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 53,
+            "top": 265.78125,
+            "right": 202.109375,
+            "bottom": 292.171875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#base-url",
+          "tag": "INPUT",
+          "htmlType": "url",
+          "rect": {
+            "left": 53,
+            "top": 409.953125,
+            "right": 715,
+            "bottom": 460.34375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#pages",
+          "tag": "TEXTAREA",
+          "htmlType": null,
+          "rect": {
+            "left": 396,
+            "top": 506.734375,
+            "right": 715,
+            "bottom": 629.734375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#sitemap",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 53,
+            "top": 506.734375,
+            "right": 372,
+            "bottom": 557.125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#max-pages",
+          "tag": "INPUT",
+          "htmlType": "number",
+          "rect": {
+            "left": 218.5,
+            "top": 615.515625,
+            "right": 372,
+            "bottom": 665.90625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#fail-on",
+          "tag": "SELECT",
+          "htmlType": null,
+          "rect": {
+            "left": 53,
+            "top": 615.515625,
+            "right": 206.5,
+            "bottom": 658.515625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#crawl",
+          "tag": "INPUT",
+          "htmlType": "checkbox",
+          "rect": {
+            "left": 699,
+            "top": 710.21875,
+            "right": 712,
+            "bottom": 723.21875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > form:nth-of-type(1) > details:nth-of-type(1) > summary:nth-of-type(1)",
+          "tag": "SUMMARY",
+          "htmlType": null,
+          "rect": {
+            "left": 53,
+            "top": 749.609375,
+            "right": 715,
+            "bottom": 776
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#consent",
+          "tag": "INPUT",
+          "htmlType": "checkbox",
+          "rect": {
+            "left": 699,
+            "top": 818,
+            "right": 712,
+            "bottom": 831
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#submit",
+          "tag": "BUTTON",
+          "htmlType": "submit",
+          "rect": {
+            "left": 429.15625,
+            "top": 870.390625,
+            "right": 715,
+            "bottom": 922.78125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#actions",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 326.671875,
+            "top": 883.390625,
+            "right": 413.15625,
+            "bottom": 909.78125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#refresh",
+          "tag": "BUTTON",
+          "htmlType": "button",
+          "rect": {
+            "left": 24,
+            "top": 490.96875,
+            "right": 137.765625,
+            "bottom": 533.359375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "https://huxhkuh.github.io/rtl-site-qa/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "screenshots": [
+        {
+          "key": "fd23d05864f032777550",
+          "state": "page",
+          "file": "screenshots/fd23d05864f032777550.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "completed",
+      "httpStatus": 200,
+      "finalURL": "https://huxhkuh.github.io/rtl-site-qa/",
+      "scrollComplete": true,
+      "title": "בדיקת איכות לאתרים · RTL QA",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "#repository",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 209,
+            "top": 270.28125,
+            "right": 358.109375,
+            "bottom": 296.671875
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#base-url",
+          "tag": "INPUT",
+          "htmlType": "url",
+          "rect": {
+            "left": 209,
+            "top": 388.0625,
+            "right": 1231,
+            "bottom": 438.453125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#pages",
+          "tag": "TEXTAREA",
+          "htmlType": null,
+          "rect": {
+            "left": 732,
+            "top": 484.84375,
+            "right": 1231,
+            "bottom": 607.84375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#sitemap",
+          "tag": "INPUT",
+          "htmlType": null,
+          "rect": {
+            "left": 209,
+            "top": 484.84375,
+            "right": 708,
+            "bottom": 535.234375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#max-pages",
+          "tag": "INPUT",
+          "htmlType": "number",
+          "rect": {
+            "left": 464.5,
+            "top": 593.625,
+            "right": 708,
+            "bottom": 644.015625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#fail-on",
+          "tag": "SELECT",
+          "htmlType": null,
+          "rect": {
+            "left": 209,
+            "top": 593.625,
+            "right": 452.5,
+            "bottom": 636.625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#crawl",
+          "tag": "INPUT",
+          "htmlType": "checkbox",
+          "rect": {
+            "left": 1215,
+            "top": 688.328125,
+            "right": 1228,
+            "bottom": 701.328125
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > main:nth-of-type(1) > section:nth-of-type(1) > form:nth-of-type(1) > details:nth-of-type(1) > summary:nth-of-type(1)",
+          "tag": "SUMMARY",
+          "htmlType": null,
+          "rect": {
+            "left": 209,
+            "top": 727.71875,
+            "right": 1231,
+            "bottom": 754.109375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#consent",
+          "tag": "INPUT",
+          "htmlType": "checkbox",
+          "rect": {
+            "left": 1215,
+            "top": 796.109375,
+            "right": 1228,
+            "bottom": 809.109375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#submit",
+          "tag": "BUTTON",
+          "htmlType": "submit",
+          "rect": {
+            "left": 945.15625,
+            "top": 847.5,
+            "right": 1231,
+            "bottom": 899.890625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#actions",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 842.671875,
+            "top": 860.5,
+            "right": 929.15625,
+            "bottom": 886.890625
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "#refresh",
+          "tag": "BUTTON",
+          "htmlType": "button",
+          "rect": {
+            "left": 180,
+            "top": 428.984375,
+            "right": 293.765625,
+            "bottom": 471.375
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    }
+  ],
+  "findings": [],
+  "skipped": [],
+  "coverage": {
+    "sitemapDocuments": 0,
+    "linksChecked": 2,
+    "urlsVisited": 1,
+    "blockedRequests": 0,
+    "scenarioMode": "all-network-blocked-except-exact-mocks",
+    "truncated": []
+  },
+  "incomplete": false,
+  "browser": "153.0.8010.12",
+  "platform": "linux",
+  "finishedAt": "2026-09-17T12:09:25.081Z",
+  "exitCode": 0
+}
