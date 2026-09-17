@@ -1,0 +1,21 @@
+{
+  "name": "rtl-site-qa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portable Hebrew / RTL browser QA with guarded scenarios and evidence",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "qa": "node src/cli.mjs scan",
+    "fixture": "node fixture/server.mjs",
+    "demo": "node examples/demo.mjs",
+    "test": "node --test --test-concurrency=1 test/*.test.mjs",
+    "check": "node --check src/cli.mjs && node --check src/scanner.mjs && node --check src/checks.mjs && node --check src/report.mjs"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.58.0",
+    "fast-xml-parser": "^5.3.0",
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0"
+  }
+}

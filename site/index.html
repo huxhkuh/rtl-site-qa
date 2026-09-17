@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+  <title>בדיקת איכות לאתרים · RTL QA</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.mjs"></script>
+</head>
+<body>
+  <header><div class="brand">RTL / SITE QA</div><h1>לבדוק לפני שמוסרים.</h1><p>בדיקת אתרים בעברית וב־RTL, בשלושה רוחבי מסך. כל ממצא מגיע עם ראיות.</p></header>
+  <main>
+    <section class="panel" aria-labelledby="new-scan">
+      <div class="row spread"><h2 id="new-scan">בדיקה חדשה</h2><a id="repository" href="https://github.com/huxhkuh/rtl-site-qa">קוד והוראות ב־GitHub</a></div>
+      <p class="muted">מזינים כתובת, פותחים את הבקשה המוכנה ב־GitHub ולוחצים <bdi>Create issue</bdi>. הבדיקה תרוץ בענן והדוח יופיע כאן.</p>
+      <form id="scan-form">
+        <label for="base-url">כתובת האתר</label>
+        <input id="base-url" name="baseURL" type="url" dir="ltr" placeholder="https://your-site.com" required autocomplete="url">
+        <div class="columns">
+          <div><label for="pages">עמודים לבדיקה — אחד בכל שורה</label><textarea id="pages" dir="ltr" rows="4">/</textarea><p class="hint">למשל: /about או /contact</p></div>
+          <div><label for="sitemap">מפת אתר (לא חובה)</label><input id="sitemap" dir="ltr" placeholder="/sitemap.xml"><div class="columns small"><div><label for="max-pages">מגבלת עמודים</label><input id="max-pages" type="number" min="1" max="30" value="10" required></div><div><label for="fail-on">סף כישלון</label><select id="fail-on"><option value="high">חומרה גבוהה</option><option value="medium">חומרה בינונית</option><option value="low">חומרה נמוכה</option><option value="none">דוח בלבד</option></select></div></div></div>
+        </div>
+        <label class="check"><input id="crawl" type="checkbox" checked> לעקוב גם אחרי קישורים פנימיים, עד מגבלת העמודים</label>
+        <details><summary>תרחישים והגדרות נוספות</summary><label for="advanced">הגדרות JSON (לא חובה)</label><textarea id="advanced" dir="ltr" rows="6" placeholder='{"scenarios": [], "allowedResourceOrigins": []}'></textarea><p class="hint">אפשר להוסיף תרחישי תפריט, FAQ וטפסים עם תשובות דמה. <a id="scenario-docs" href="https://github.com/huxhkuh/rtl-site-qa/blob/main/examples/fixture.config.json">לדוגמה מלאה</a></p></details>
+        <label class="check consent"><input id="consent" type="checkbox" required> זהו אתר שאני רשאי לבדוק, וידוע לי שהכתובות, הדוח וצילומי המסך יהיו ציבוריים.</label>
+        <div class="row"><button id="submit" type="submit" disabled>פתיחת בקשת סריקה ב־GitHub ←</button><a id="actions" href="https://github.com/huxhkuh/rtl-site-qa/actions/workflows/qa-pages.yml">מצב ההרצות</a></div>
+        <p id="form-status" role="status" aria-live="polite"></p>
+        <p class="hint" id="owner-note">טוען את הגדרות הפרויקט…</p>
+      </form>
+    </section>
+    <section aria-labelledby="reports-title">
+      <div class="row spread"><h2 id="reports-title">הדוחות האחרונים</h2><button id="refresh" type="button" class="secondary">רענון דוחות</button></div>
+      <p class="muted">עד 20 ריצות אחרונות. דוח נשמר גם כשנמצאות תקלות. הסריקה עשויה להימשך כמה דקות.</p>
+      <p id="history-status" role="status">טוען דוחות…</p>
+      <div class="table"><table><thead><tr><th>אתר / מועד</th><th>תוצאה</th><th>כיסוי</th><th>דוח וראיות</th></tr></thead><tbody id="history"></tbody></table></div>
+    </section>
+    <aside class="notice"><strong>מה נבדק ומה נשאר לבדיקה אנושית</strong><p>JavaScript, רשת, תמונות, קישורים פנימיים, חריגה מגבולות המסך ובדיקות נגישות בסיסיות. חשדות לטקסט חתוך ושינויים מול ייחוס מאושר דורשים בדיקה אנושית. פעולות טופס מתבצעות בהדמיה בלבד.</p><p>השירות בודק כתובות ציבוריות בלבד. אין כאן הוכחה לנגישות מלאה, לאבטחה מלאה או להתאמה לנטפרי. ללא תמונת ייחוס מאושרת אין השוואה חזותית.</p></aside>
+    <footer>הסריקה מתבצעת ב־GitHub Actions. הדף והדוחות זמינים ב־GitHub Pages, ללא צורך בשרת מקומי. ניתן להפעיל בדיקה חדשה רק מהחשבון שמחזיק במאגר.</footer>
+  </main>
+</body></html>

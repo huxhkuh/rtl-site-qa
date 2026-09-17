@@ -1,0 +1,10 @@
+node_modules/
+runs/
+run-report/
+sample-report/
+project-report/
+public/
+test-results/
+.env*
+baselines/
+scan-result.json

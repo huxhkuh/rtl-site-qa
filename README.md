@@ -77,4 +77,3 @@ npm run qa -- --base http://localhost:3000 --pages /,/about
 זוהי בדיקה אוטומטית מוגבלת ב־Chromium. קיצור טקסט מכוון, תוכן דינמי או חסימת משאב עשויים לייצר התראות שווא; תקלות ב־iframes, Shadow DOM, קורא מסך ונתיבים שלא הוגדרו עשויות לא להתגלות. יש להפעיל שיקול דעת מול הראיות. הכלי אינו הוכחה לנגישות מלאה, לאבטחה מלאה או להתאמה לנטפרי.
 
 מקורות: [GitHub Pages עם Actions](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages), [יצירת בקשה עם שדות מוכנים](https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/creating-an-issue), [Playwright Network](https://playwright.dev/docs/network).
-

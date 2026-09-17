@@ -1,0 +1,37 @@
+{
+  "baseURL": "http://127.0.0.1:4173",
+  "pages": ["/"],
+  "sitemap": "/sitemap.xml",
+  "crawl": false,
+  "maxPages": 5,
+  "timeoutMs": 2500,
+  "outDir": "../sample-report",
+  "baselineDir": "../baselines",
+  "failOn": "high",
+  "scenarios": [
+    { "name": "תפריט שבור", "page": "/", "steps": [
+      { "action": "click", "selector": "#menu-toggle" },
+      { "action": "expectVisible", "selector": "#menu" }
+    ] },
+    { "name": "תפריט תקין", "page": "/", "steps": [
+      { "action": "press", "selector": "#safe-menu-toggle", "value": "Enter" },
+      { "action": "expectVisible", "selector": "#safe-menu" },
+      { "action": "expectAttribute", "selector": "#safe-menu-toggle", "attribute": "aria-expanded", "value": "true" },
+      { "action": "press", "selector": "#safe-menu-toggle", "value": "Enter" },
+      { "action": "expectHidden", "selector": "#safe-menu" }
+    ] },
+    { "name": "שאלות נפוצות במקלדת", "page": "/", "steps": [
+      { "action": "press", "selector": "#faq summary", "value": "Enter" },
+      { "action": "expectVisible", "selector": "#answer" },
+      { "action": "press", "selector": "#faq summary", "value": "Enter" },
+      { "action": "expectHidden", "selector": "#answer" }
+    ] },
+    { "name": "טופס עם הדמיה בלבד", "page": "/", "mocks": [
+      { "method": "POST", "url": "/submit", "status": 200, "body": { "ok": true } }
+    ], "steps": [
+      { "action": "fill", "selector": "#email", "value": "qa@example.invalid" },
+      { "action": "click", "selector": "#contact button" },
+      { "action": "expectText", "selector": "#status", "value": "הדמיה הצליחה" }
+    ] }
+  ]
+}

@@ -1,0 +1,93 @@
+name: Scan and publish
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      config_json:
+        description: 'QA configuration JSON. Leave empty for the demonstration site.'
+        required: false
+        type: string
+        default: ''
+  issues:
+    types: [opened]
+
+concurrency:
+  group: rtl-qa-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.actor == github.repository_owner) || (github.event_name == 'issues' && github.event.issue.user.login == github.repository_owner && startsWith(github.event.issue.title, '[RTL QA] '))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    outputs:
+      exit_code: ${{ steps.scan.outputs.exit_code }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Verify the scanner
+        if: github.event_name == 'push'
+        run: npm test
+      - name: Scan
+        id: scan
+        env:
+          REQUEST_JSON: ${{ inputs.config_json }}
+        run: node scripts/cloud-run.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: qa-report
+          path: run-report/
+          if-no-files-found: error
+          retention-days: 30
+
+  publish:
+    needs: scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: actions/download-artifact@v4
+        with:
+          name: qa-report
+          path: run-report
+      - name: Update the site and report history
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/publish-history.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Apply the configured quality threshold
+        env:
+          SCAN_EXIT_CODE: ${{ needs.scan.outputs.exit_code }}
+        run: node -e "process.exit(Number(process.env.SCAN_EXIT_CODE || 2))"
