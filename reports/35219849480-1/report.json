@@ -1,0 +1,1228 @@
+{
+  "schemaVersion": 1,
+  "runId": "2026-09-17T12:13:28.729Z",
+  "baseURL": "https://gardar.co.il/",
+  "settings": {
+    "maxPages": 10,
+    "maxLinks": 100,
+    "viewports": [
+      {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      }
+    ],
+    "failOn": "high",
+    "exclude": [
+      "/logout",
+      "/signout",
+      "/checkout",
+      "/cart",
+      "/delete",
+      "/remove",
+      "/purchase",
+      "/unsubscribe",
+      "/api/"
+    ],
+    "ignoreChecks": [],
+    "allowedResourceOrigins": []
+  },
+  "pages": [
+    {
+      "url": "https://gardar.co.il/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "screenshots": [
+        {
+          "key": "f3659f51d65540c5e5f1",
+          "state": "page",
+          "file": "screenshots/f3659f51d65540c5e5f1.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [
+        {
+          "url": "https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&render=explicit",
+          "method": "GET",
+          "resourceType": "script",
+          "reason": "scope-or-exclusion",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "mutation-method-blocked",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "mutation-method-blocked",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "scenario-network-lock",
+          "mocked": false,
+          "phase": "keyboard"
+        }
+      ],
+      "status": "completed",
+      "httpStatus": 403,
+      "finalURL": "https://gardar.co.il/?__cf_chl_rt_tk=rVW3JKUSNgZfDfuk5iS7dmB3RKc7fAbK6qadnJq8mNI-1789647209-1.0.1.1-zFd_zHPstJs.6xRSeiQwwjSZCVDvoH4_owwSKiz_4bg",
+      "scrollComplete": true,
+      "title": "רק רגע...",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 38.5,
+            "top": 598,
+            "right": 304,
+            "bottom": 641
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 64.34375,
+            "top": 521,
+            "right": 214.359375,
+            "bottom": 540
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 132.84375,
+            "top": 810,
+            "right": 194.09375,
+            "bottom": 828
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 78.953125,
+            "top": 810,
+            "right": 114.84375,
+            "bottom": 828
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 38.5,
+            "top": 153,
+            "right": 304,
+            "bottom": 196
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 64.34375,
+            "top": 521,
+            "right": 214.359375,
+            "bottom": 540
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 132.84375,
+            "top": 810,
+            "right": 194.09375,
+            "bottom": 828
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 78.953125,
+            "top": 810,
+            "right": 114.84375,
+            "bottom": 828
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 38.5,
+            "top": 153,
+            "right": 304,
+            "bottom": 196
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 64.34375,
+            "top": 521,
+            "right": 214.359375,
+            "bottom": 540
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "https://gardar.co.il/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "screenshots": [
+        {
+          "key": "92eb8a665aa17ed26c4b",
+          "state": "page",
+          "file": "screenshots/92eb8a665aa17ed26c4b.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [
+        {
+          "url": "https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&render=explicit",
+          "method": "GET",
+          "resourceType": "script",
+          "reason": "scope-or-exclusion",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "mutation-method-blocked",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "mutation-method-blocked",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "scenario-network-lock",
+          "mocked": false,
+          "phase": "keyboard"
+        }
+      ],
+      "status": "completed",
+      "httpStatus": 403,
+      "finalURL": "https://gardar.co.il/?__cf_chl_rt_tk=Vl96Xf.f3tUad8enc0MMftk6YkyU8d2lNkxb8dXJNmY-1789647211-1.0.1.1-vilF.e6y1wOtShBF3TUh8gH4DgbsC7HGb9XA992oJIo",
+      "scrollComplete": true,
+      "title": "רק רגע...",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 347.6875,
+            "top": 472,
+            "right": 467.40625,
+            "bottom": 491
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 180.34375,
+            "top": 648,
+            "right": 330.359375,
+            "bottom": 667
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 321.84375,
+            "top": 990,
+            "right": 383.09375,
+            "bottom": 1008
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 267.953125,
+            "top": 990,
+            "right": 303.84375,
+            "bottom": 1008
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 347.6875,
+            "top": 472,
+            "right": 467.40625,
+            "bottom": 491
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 180.34375,
+            "top": 648,
+            "right": 330.359375,
+            "bottom": 667
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 321.84375,
+            "top": 990,
+            "right": 383.09375,
+            "bottom": 1008
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 267.953125,
+            "top": 990,
+            "right": 303.84375,
+            "bottom": 1008
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 347.6875,
+            "top": 472,
+            "right": 467.40625,
+            "bottom": 491
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 180.34375,
+            "top": 648,
+            "right": 330.359375,
+            "bottom": 667
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "https://gardar.co.il/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "screenshots": [
+        {
+          "key": "ccea777dbf80a87a8425",
+          "state": "page",
+          "file": "screenshots/ccea777dbf80a87a8425.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [
+        {
+          "url": "https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&render=explicit",
+          "method": "GET",
+          "resourceType": "script",
+          "reason": "scope-or-exclusion",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "mutation-method-blocked",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "mutation-method-blocked",
+          "mocked": false,
+          "phase": "scan"
+        },
+        {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs",
+          "method": "POST",
+          "resourceType": "xhr",
+          "reason": "scenario-network-lock",
+          "mocked": false,
+          "phase": "keyboard"
+        }
+      ],
+      "status": "completed",
+      "httpStatus": 403,
+      "finalURL": "https://gardar.co.il/?__cf_chl_rt_tk=LiKCdqJFCQUkJ7gZH8UE_iPfP3eC0_JQe0y5MCfpHpk-1789647212-1.0.1.1-VpvZmoWn.ojyYJnY2eqxLdt0iLm6Qjg7fPGtdH9NDXY",
+      "scrollComplete": true,
+      "title": "רק רגע...",
+      "direction": "rtl",
+      "keyboard": [
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 771.6875,
+            "top": 472,
+            "right": 891.40625,
+            "bottom": 491
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 604.34375,
+            "top": 648,
+            "right": 754.359375,
+            "bottom": 667
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 657.84375,
+            "top": 866,
+            "right": 719.09375,
+            "bottom": 884
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 603.953125,
+            "top": 866,
+            "right": 639.84375,
+            "bottom": 884
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 771.6875,
+            "top": 472,
+            "right": 891.40625,
+            "bottom": 491
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 604.34375,
+            "top": 648,
+            "right": 754.359375,
+            "bottom": 667
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(1) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 657.84375,
+            "top": 866,
+            "right": 719.09375,
+            "bottom": 884
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 603.953125,
+            "top": 866,
+            "right": 639.84375,
+            "bottom": 884
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 771.6875,
+            "top": 472,
+            "right": 891.40625,
+            "bottom": 491
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        },
+        {
+          "selector": "body:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > p:nth-of-type(4) > a:nth-of-type(1)",
+          "tag": "A",
+          "htmlType": null,
+          "rect": {
+            "left": 604.34375,
+            "top": 648,
+            "right": 754.359375,
+            "bottom": 667
+          },
+          "hidden": false,
+          "outside": false,
+          "possibleNoIndicator": false
+        }
+      ]
+    },
+    {
+      "url": "https://gardar.co.il/cdn-cgi/challenge-platform/help",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "screenshots": [
+        {
+          "key": "da63399150512f8a4ba6",
+          "state": "error",
+          "file": "screenshots/da63399150512f8a4ba6.png",
+          "fingerprint": "0d8453caa09ff2112bccb682d9dcaac61e756e33d562697f8bef94c98d967a4e",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "incomplete"
+    },
+    {
+      "url": "https://gardar.co.il/cdn-cgi/challenge-platform/help",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "screenshots": [
+        {
+          "key": "cadf788a2f8f6d86fd54",
+          "state": "error",
+          "file": "screenshots/cadf788a2f8f6d86fd54.png",
+          "fingerprint": "ab667546368167197f08715153fe3c7be97b4823c1cfb12a2cea673a2f402694",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "incomplete"
+    },
+    {
+      "url": "https://gardar.co.il/cdn-cgi/challenge-platform/help",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "screenshots": [
+        {
+          "key": "51740ceee74ca91b0e22",
+          "state": "error",
+          "file": "screenshots/51740ceee74ca91b0e22.png",
+          "fingerprint": "1d5c42375c6be52a2839c733434da8f62055a43bd38e4147e772245f720f9be7",
+          "visual": {
+            "status": "no-approved-baseline"
+          }
+        }
+      ],
+      "scenarios": [],
+      "blocked": [],
+      "status": "incomplete"
+    }
+  ],
+  "findings": [
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "https://gardar.co.il/",
+        "status": 403,
+        "type": "document"
+      },
+      "id": "F0001",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/f3659f51d65540c5e5f1.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "location": {
+          "url": "https://gardar.co.il/",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0002",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/f3659f51d65540c5e5f1.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "location": {
+          "url": "https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&render=explicit",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0003",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/f3659f51d65540c5e5f1.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "location": {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0004",
+      "occurrences": 3,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/f3659f51d65540c5e5f1.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "https://gardar.co.il/",
+        "status": 403,
+        "type": "document"
+      },
+      "id": "F0005",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/92eb8a665aa17ed26c4b.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "location": {
+          "url": "https://gardar.co.il/",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0006",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/92eb8a665aa17ed26c4b.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "location": {
+          "url": "https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&render=explicit",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0007",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/92eb8a665aa17ed26c4b.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "location": {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0008",
+      "occurrences": 3,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/92eb8a665aa17ed26c4b.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "http-error",
+      "evidence": {
+        "url": "https://gardar.co.il/",
+        "status": 403,
+        "type": "document"
+      },
+      "id": "F0009",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: http-error"
+      ],
+      "screenshot": "screenshots/ccea777dbf80a87a8425.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "location": {
+          "url": "https://gardar.co.il/",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0010",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/ccea777dbf80a87a8425.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "location": {
+          "url": "https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&render=explicit",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0011",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/ccea777dbf80a87a8425.png"
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "medium",
+      "certainty": "observed",
+      "check": "console-error",
+      "evidence": {
+        "message": "Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector",
+        "location": {
+          "url": "https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs",
+          "line": 0,
+          "column": 0,
+          "lineNumber": 0,
+          "columnNumber": 0
+        }
+      },
+      "id": "F0012",
+      "occurrences": 3,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: console-error"
+      ],
+      "screenshot": "screenshots/ccea777dbf80a87a8425.png"
+    },
+    {
+      "page": "https://gardar.co.il/cdn-cgi/challenge-platform/help",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "page-check-error",
+      "evidence": {
+        "error": "Navigation preflight: scope-or-exclusion"
+      },
+      "id": "F0013",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/cdn-cgi/challenge-platform/help",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדיקה: page-check-error"
+      ]
+    },
+    {
+      "page": "https://gardar.co.il/cdn-cgi/challenge-platform/help",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "page-check-error",
+      "evidence": {
+        "error": "Navigation preflight: scope-or-exclusion"
+      },
+      "id": "F0014",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/cdn-cgi/challenge-platform/help",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדיקה: page-check-error"
+      ]
+    },
+    {
+      "page": "https://gardar.co.il/cdn-cgi/challenge-platform/help",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "page-check-error",
+      "evidence": {
+        "error": "Navigation preflight: scope-or-exclusion"
+      },
+      "id": "F0015",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/cdn-cgi/challenge-platform/help",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדיקה: page-check-error"
+      ]
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "mobile",
+        "width": 390,
+        "height": 844
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "broken-link",
+      "selector": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "screenshot": "screenshots/f3659f51d65540c5e5f1.png",
+      "evidence": {
+        "target": "https://gardar.co.il/",
+        "finalURL": "https://gardar.co.il/",
+        "status": 403
+      },
+      "id": "F0016",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 390 פיקסלים",
+        "בדקו את הרכיב div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "בדיקה: broken-link"
+      ]
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "tablet",
+        "width": 768,
+        "height": 1024
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "broken-link",
+      "selector": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "screenshot": "screenshots/92eb8a665aa17ed26c4b.png",
+      "evidence": {
+        "target": "https://gardar.co.il/",
+        "finalURL": "https://gardar.co.il/",
+        "status": 403
+      },
+      "id": "F0017",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 768 פיקסלים",
+        "בדקו את הרכיב div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "בדיקה: broken-link"
+      ]
+    },
+    {
+      "page": "https://gardar.co.il/",
+      "viewport": {
+        "name": "desktop",
+        "width": 1440,
+        "height": 900
+      },
+      "state": "page",
+      "severity": "high",
+      "certainty": "observed",
+      "check": "broken-link",
+      "selector": "div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+      "screenshot": "screenshots/ccea777dbf80a87a8425.png",
+      "evidence": {
+        "target": "https://gardar.co.il/",
+        "finalURL": "https://gardar.co.il/",
+        "status": 403
+      },
+      "id": "F0018",
+      "occurrences": 1,
+      "reproduction": [
+        "פתחו https://gardar.co.il/",
+        "הגדירו רוחב 1440 פיקסלים",
+        "בדקו את הרכיב div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(2) > ol:nth-of-type(1) > li:nth-of-type(3) > a:nth-of-type(1)",
+        "בדיקה: broken-link"
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "url": "https://gardar.co.il/cdn-cgi/challenge-platform/help",
+      "reason": "scope-or-exclusion",
+      "finalURL": "https://developers.cloudflare.com/cloudflare-challenges/troubleshooting/challenge-solve-issues/"
+    }
+  ],
+  "coverage": {
+    "sitemapDocuments": 0,
+    "linksChecked": 2,
+    "urlsVisited": 2,
+    "blockedRequests": 12,
+    "scenarioMode": "all-network-blocked-except-exact-mocks",
+    "truncated": []
+  },
+  "incomplete": true,
+  "browser": "153.0.8010.12",
+  "platform": "linux",
+  "finishedAt": "2026-09-17T12:13:34.277Z",
+  "exitCode": 2
+}

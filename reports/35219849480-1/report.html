@@ -1,0 +1,316 @@
+<!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>דוח בדיקת אתר · RTL QA</title><style>
+  :root{font-family:Arial,"Segoe UI",sans-serif;color:#182f35;background:#f3f5f4;font-size:16px;line-height:1.65}*{box-sizing:border-box}body{margin:0}header{background:#103b42;color:white;padding:38px max(24px,calc((100vw - 1120px)/2))}header p{color:#c9dedb;margin-bottom:0}.brand{font-size:12px;letter-spacing:2px;color:#8ae0cb}h1{font-size:clamp(28px,5vw,42px);line-height:1.2;margin:14px 0}h2{margin-top:32px;font-size:23px}h3{margin:8px 0;font-size:20px}main{max-width:1168px;margin:0 auto;padding:24px}a{color:#006956;text-underline-offset:3px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:-1px 0 24px}.stat{border-bottom:3px solid #147c70;background:white;padding:20px}.stat strong{display:block;font-size:32px;line-height:1.2}.muted{color:#536a70;font-size:14px}.notice{border-inline-start:4px solid #c38828;background:#fff9e9;padding:16px 20px}.notice p{margin:4px 0}.finding{background:white;border:1px solid #d5e0dd;border-radius:4px;padding:20px;margin:12px 0}.row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.badge{font-size:12px;padding:3px 10px;border-radius:3px;background:#e8efed}.high,.critical{background:#ffe4df;color:#8c281b}.medium{background:#fff0c7;color:#735012}.location{font-size:14px;overflow-wrap:anywhere;color:#536a70}details{margin-top:14px}summary{cursor:pointer;color:#175c59}pre{background:#f3f6f5;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px;text-align:left}table{border-collapse:collapse;width:100%;background:white}th,td{text-align:right;padding:12px;border-bottom:1px solid #d5e0dd;vertical-align:top;overflow-wrap:anywhere}th{background:#e5edea}.table{overflow:auto}button,select{font:inherit;padding:8px 12px;border:1px solid #a0b7b0;border-radius:3px;background:white;color:#183c39}button{cursor:pointer}footer{margin:40px 0;color:#536a70;font-size:14px}bdi{overflow-wrap:anywhere}img{max-width:100%}@media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr)}main{padding:16px}.stat{padding:14px}th,td{min-width:100px}header{padding:28px 20px}}@media print{header{color:#182f35;background:white}.filters{display:none}.finding{break-inside:avoid}}
+  </style></head><body><header><div class="brand">RTL / SITE QA</div><h1>בדיקת האתר, עם ראיות.</h1><p><bdi>https://gardar.co.il/</bdi><br>2026-09-17T12:13:28.729Z · Chromium 153.0.8010.12</p></header><main>
+  <div class="stats"><div class="stat"><strong>2</strong>עמודים</div><div class="stat"><strong>6</strong>בדיקות עמוד ורוחב</div><div class="stat"><strong>18</strong>ממצאים אוטומטיים</div><div class="stat"><strong>0</strong>חשדות לבדיקה</div></div>
+  <div class="notice"><p><strong>הריצה לא הושלמה — קוד 2</strong> · סף: high</p><p>הדוח מכסה רק את העמודים, הרוחבים והתרחישים המפורטים. הוא אינו אישור לנגישות מלאה, לאבטחה או להתאמה לנטפרי. חשדות חזותיים אינם מכשילים את CI.</p></div>
+  <h2>ממצאים</h2><div class="row filters"><label>חומרה <select id="level"><option value="all">הכול</option><option value="critical">קריטית</option><option value="high">גבוהה</option><option value="medium">בינונית</option><option value="low">נמוכה</option><option value="info">מידע</option></select></label><label>סוג <select id="certainty"><option value="all">הכול</option><option value="observed">ממצא אוטומטי</option><option value="suspected">חשד לבדיקה</option></select></label><span id="visible-count" role="status"></span></div><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0001 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 390px · page</p><div class="row"><a href="screenshots/f3659f51d65540c5e5f1.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;status&quot;: 403,
+  &quot;type&quot;: &quot;document&quot;
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0002 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 390px · page</p><div class="row"><a href="screenshots/f3659f51d65540c5e5f1.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 403 (Forbidden)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://gardar.co.il/&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0003 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 390px · page</p><div class="row"><a href="screenshots/f3659f51d65540c5e5f1.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&amp;render=explicit&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0004 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 390px · page</p><div class="row"><a href="screenshots/f3659f51d65540c5e5f1.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0005 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 768px · page</p><div class="row"><a href="screenshots/92eb8a665aa17ed26c4b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;status&quot;: 403,
+  &quot;type&quot;: &quot;document&quot;
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0006 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 768px · page</p><div class="row"><a href="screenshots/92eb8a665aa17ed26c4b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 403 (Forbidden)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://gardar.co.il/&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0007 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 768px · page</p><div class="row"><a href="screenshots/92eb8a665aa17ed26c4b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&amp;render=explicit&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0008 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 768px · page</p><div class="row"><a href="screenshots/92eb8a665aa17ed26c4b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0009 · ממצא אוטומטי</span></div><h3>תשובת HTTP שגויה</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/ccea777dbf80a87a8425.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;http-error&quot;,
+  &quot;url&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;status&quot;: 403,
+  &quot;type&quot;: &quot;document&quot;
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: http-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0010 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/ccea777dbf80a87a8425.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: the server responded with a status of 403 (Forbidden)&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://gardar.co.il/&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0011 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/ccea777dbf80a87a8425.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&amp;render=explicit&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="medium" data-certainty="observed"><div class="row"><span class="badge medium">בינונית</span><span class="muted">F0012 · ממצא אוטומטי</span></div><h3>שגיאה בקונסול</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/ccea777dbf80a87a8425.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;console-error&quot;,
+  &quot;message&quot;: &quot;Failed to load resource: net::ERR_BLOCKED_BY_CLIENT.Inspector&quot;,
+  &quot;location&quot;: {
+    &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs&quot;,
+    &quot;line&quot;: 0,
+    &quot;column&quot;: 0,
+    &quot;lineNumber&quot;: 0,
+    &quot;columnNumber&quot;: 0
+  }
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: console-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0013 · ממצא אוטומטי</span></div><h3>בדיקת עמוד לא הושלמה</h3><p class="location"><bdi>https://gardar.co.il/cdn-cgi/challenge-platform/help</bdi> · 390px · page</p><div class="row"></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;page-check-error&quot;,
+  &quot;error&quot;: &quot;Navigation preflight: scope-or-exclusion&quot;
+}</pre><ol><li>פתחו https://gardar.co.il/cdn-cgi/challenge-platform/help</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדיקה: page-check-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0014 · ממצא אוטומטי</span></div><h3>בדיקת עמוד לא הושלמה</h3><p class="location"><bdi>https://gardar.co.il/cdn-cgi/challenge-platform/help</bdi> · 768px · page</p><div class="row"></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;page-check-error&quot;,
+  &quot;error&quot;: &quot;Navigation preflight: scope-or-exclusion&quot;
+}</pre><ol><li>פתחו https://gardar.co.il/cdn-cgi/challenge-platform/help</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדיקה: page-check-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0015 · ממצא אוטומטי</span></div><h3>בדיקת עמוד לא הושלמה</h3><p class="location"><bdi>https://gardar.co.il/cdn-cgi/challenge-platform/help</bdi> · 1440px · page</p><div class="row"></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;page-check-error&quot;,
+  &quot;error&quot;: &quot;Navigation preflight: scope-or-exclusion&quot;
+}</pre><ol><li>פתחו https://gardar.co.il/cdn-cgi/challenge-platform/help</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדיקה: page-check-error</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0016 · ממצא אוטומטי</span></div><h3>קישור פנימי שבור</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 390px · page</p><div class="row"><a href="screenshots/f3659f51d65540c5e5f1.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-link&quot;,
+  &quot;selector&quot;: &quot;div:nth-of-type(1) &gt; div:nth-of-type(1) &gt; div:nth-of-type(2) &gt; div:nth-of-type(2) &gt; ol:nth-of-type(1) &gt; li:nth-of-type(3) &gt; a:nth-of-type(1)&quot;,
+  &quot;target&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;finalURL&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;status&quot;: 403
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 390 פיקסלים</li><li>בדקו את הרכיב div:nth-of-type(1) &gt; div:nth-of-type(1) &gt; div:nth-of-type(2) &gt; div:nth-of-type(2) &gt; ol:nth-of-type(1) &gt; li:nth-of-type(3) &gt; a:nth-of-type(1)</li><li>בדיקה: broken-link</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0017 · ממצא אוטומטי</span></div><h3>קישור פנימי שבור</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 768px · page</p><div class="row"><a href="screenshots/92eb8a665aa17ed26c4b.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-link&quot;,
+  &quot;selector&quot;: &quot;div:nth-of-type(1) &gt; div:nth-of-type(1) &gt; div:nth-of-type(2) &gt; div:nth-of-type(2) &gt; ol:nth-of-type(1) &gt; li:nth-of-type(3) &gt; a:nth-of-type(1)&quot;,
+  &quot;target&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;finalURL&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;status&quot;: 403
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 768 פיקסלים</li><li>בדקו את הרכיב div:nth-of-type(1) &gt; div:nth-of-type(1) &gt; div:nth-of-type(2) &gt; div:nth-of-type(2) &gt; ol:nth-of-type(1) &gt; li:nth-of-type(3) &gt; a:nth-of-type(1)</li><li>בדיקה: broken-link</li></ol></details></article><article class="finding" data-level="high" data-certainty="observed"><div class="row"><span class="badge high">גבוהה</span><span class="muted">F0018 · ממצא אוטומטי</span></div><h3>קישור פנימי שבור</h3><p class="location"><bdi>https://gardar.co.il/</bdi> · 1440px · page</p><div class="row"><a href="screenshots/ccea777dbf80a87a8425.png" target="_blank" rel="noopener">צילום מסך</a></div><details><summary>ראיות וצעדי שחזור</summary><pre dir="ltr">{
+  &quot;check&quot;: &quot;broken-link&quot;,
+  &quot;selector&quot;: &quot;div:nth-of-type(1) &gt; div:nth-of-type(1) &gt; div:nth-of-type(2) &gt; div:nth-of-type(2) &gt; ol:nth-of-type(1) &gt; li:nth-of-type(3) &gt; a:nth-of-type(1)&quot;,
+  &quot;target&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;finalURL&quot;: &quot;https://gardar.co.il/&quot;,
+  &quot;status&quot;: 403
+}</pre><ol><li>פתחו https://gardar.co.il/</li><li>הגדירו רוחב 1440 פיקסלים</li><li>בדקו את הרכיב div:nth-of-type(1) &gt; div:nth-of-type(1) &gt; div:nth-of-type(2) &gt; div:nth-of-type(2) &gt; ol:nth-of-type(1) &gt; li:nth-of-type(3) &gt; a:nth-of-type(1)</li><li>בדיקה: broken-link</li></ol></details></article>
+  <h2>כיסוי וצילומי מסך</h2><div class="table"><table><thead><tr><th>עמוד / רוחב</th><th>סטטוס ותרחישים</th><th>השוואה חזותית</th></tr></thead><tbody><tr><td><bdi>https://gardar.co.il/</bdi><br>390 × 844</td><td>הבדיקה הסתיימה<br></td><td><a href="screenshots/f3659f51d65540c5e5f1.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">f3659f51d65540c5e5f1</small></td></tr><tr><td><bdi>https://gardar.co.il/</bdi><br>768 × 1024</td><td>הבדיקה הסתיימה<br></td><td><a href="screenshots/92eb8a665aa17ed26c4b.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">92eb8a665aa17ed26c4b</small></td></tr><tr><td><bdi>https://gardar.co.il/</bdi><br>1440 × 900</td><td>הבדיקה הסתיימה<br></td><td><a href="screenshots/ccea777dbf80a87a8425.png" target="_blank" rel="noopener">page</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">ccea777dbf80a87a8425</small></td></tr><tr><td><bdi>https://gardar.co.il/cdn-cgi/challenge-platform/help</bdi><br>390 × 844</td><td>בדיקה חלקית<br></td><td><a href="screenshots/da63399150512f8a4ba6.png" target="_blank" rel="noopener">error</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">da63399150512f8a4ba6</small></td></tr><tr><td><bdi>https://gardar.co.il/cdn-cgi/challenge-platform/help</bdi><br>768 × 1024</td><td>בדיקה חלקית<br></td><td><a href="screenshots/cadf788a2f8f6d86fd54.png" target="_blank" rel="noopener">error</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">cadf788a2f8f6d86fd54</small></td></tr><tr><td><bdi>https://gardar.co.il/cdn-cgi/challenge-platform/help</bdi><br>1440 × 900</td><td>בדיקה חלקית<br></td><td><a href="screenshots/51740ceee74ca91b0e22.png" target="_blank" rel="noopener">error</a> · אין ייחוס מאושר — ההשוואה לא בוצעה<br><small dir="ltr">51740ceee74ca91b0e22</small></td></tr></tbody></table></div>
+  <h2>מה לא נבדק, ומה נחסם</h2><p>נבדקו 2 קישורים ייחודיים ו־0 קובצי sitemap. נרשמו 12 אירועי חסימה או הדמיה. בזמן תרחישים, כל קריאת רשת חסומה מלבד תשובות דמה שהוגדרו במפורש.</p><p>מגבלות שהופעלו: לא הופעלו. יש לבדוק ידנית קיצורי טקסט מכוונים, איכות טקסט חלופי, סדר קריאה, קורא מסך, ניגודיות ומיקוד בכל המסלולים.</p>
+  <details><summary>הגדרות, חריגות וחסימות</summary><pre dir="ltr">{
+  &quot;settings&quot;: {
+    &quot;maxPages&quot;: 10,
+    &quot;maxLinks&quot;: 100,
+    &quot;viewports&quot;: [
+      {
+        &quot;name&quot;: &quot;mobile&quot;,
+        &quot;width&quot;: 390,
+        &quot;height&quot;: 844
+      },
+      {
+        &quot;name&quot;: &quot;tablet&quot;,
+        &quot;width&quot;: 768,
+        &quot;height&quot;: 1024
+      },
+      {
+        &quot;name&quot;: &quot;desktop&quot;,
+        &quot;width&quot;: 1440,
+        &quot;height&quot;: 900
+      }
+    ],
+    &quot;failOn&quot;: &quot;high&quot;,
+    &quot;exclude&quot;: [
+      &quot;/logout&quot;,
+      &quot;/signout&quot;,
+      &quot;/checkout&quot;,
+      &quot;/cart&quot;,
+      &quot;/delete&quot;,
+      &quot;/remove&quot;,
+      &quot;/purchase&quot;,
+      &quot;/unsubscribe&quot;,
+      &quot;/api/&quot;
+    ],
+    &quot;ignoreChecks&quot;: [],
+    &quot;allowedResourceOrigins&quot;: []
+  },
+  &quot;skipped&quot;: [
+    {
+      &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/help&quot;,
+      &quot;reason&quot;: &quot;scope-or-exclusion&quot;,
+      &quot;finalURL&quot;: &quot;https://developers.cloudflare.com/cloudflare-challenges/troubleshooting/challenge-solve-issues/&quot;
+    }
+  ],
+  &quot;network&quot;: [
+    {
+      &quot;page&quot;: &quot;https://gardar.co.il/&quot;,
+      &quot;width&quot;: 390,
+      &quot;blocked&quot;: [
+        {
+          &quot;url&quot;: &quot;https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&amp;render=explicit&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;resourceType&quot;: &quot;script&quot;,
+          &quot;reason&quot;: &quot;scope-or-exclusion&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;mutation-method-blocked&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;mutation-method-blocked&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806750aadf09a/w3CAPBmoyCeoK48QsjYGrDL2CoW5gn_8EacVkyTqpKo-1789647209-1.2.1.1-IR5tD5h8V.bxnAAxh05Rd02xLH5tMNZ9FgfY1eGpoAU0E0mcWh5bTu4e5TpmkjUS&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;scenario-network-lock&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;keyboard&quot;
+        }
+      ]
+    },
+    {
+      &quot;page&quot;: &quot;https://gardar.co.il/&quot;,
+      &quot;width&quot;: 768,
+      &quot;blocked&quot;: [
+        {
+          &quot;url&quot;: &quot;https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&amp;render=explicit&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;resourceType&quot;: &quot;script&quot;,
+          &quot;reason&quot;: &quot;scope-or-exclusion&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;mutation-method-blocked&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;mutation-method-blocked&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c8067dae70433c/DwLBBsZk7w5XIv.Dxb55F6wTaBzFw7DCISlh_t4j7P0-1789647211-1.2.1.1-4RRXrsbKmyXaTAWLBKHty0RgjT5O0zpiyFBX.oDgkdFk4aJ_I190LPasjfmjd7iE&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;scenario-network-lock&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;keyboard&quot;
+        }
+      ]
+    },
+    {
+      &quot;page&quot;: &quot;https://gardar.co.il/&quot;,
+      &quot;width&quot;: 1440,
+      &quot;blocked&quot;: [
+        {
+          &quot;url&quot;: &quot;https://challenges.cloudflare.com/turnstile/v0/g/330e41bb475c/api.js?onload=khCN8&amp;render=explicit&quot;,
+          &quot;method&quot;: &quot;GET&quot;,
+          &quot;resourceType&quot;: &quot;script&quot;,
+          &quot;reason&quot;: &quot;scope-or-exclusion&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;mutation-method-blocked&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;mutation-method-blocked&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;scan&quot;
+        },
+        {
+          &quot;url&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/h/g/fo/1199534310:1789643109:jFEj8-619uWZpd39DC8lTYYWw1_7LN85QvomizJHNws/a3c806865be6e573/d6m.Z0Tys9GdwSRmNCU.NUaWY7lCkpMQMMHlIyfcE2w-1789647212-1.2.1.1-x0Z8fD5Ps2g.c8zYjQdHS._HAymJND.h3KW8SATyFMO7uphIbW3UqfTxjU3pbIPs&quot;,
+          &quot;method&quot;: &quot;POST&quot;,
+          &quot;resourceType&quot;: &quot;xhr&quot;,
+          &quot;reason&quot;: &quot;scenario-network-lock&quot;,
+          &quot;mocked&quot;: false,
+          &quot;phase&quot;: &quot;keyboard&quot;
+        }
+      ]
+    },
+    {
+      &quot;page&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/help&quot;,
+      &quot;width&quot;: 390,
+      &quot;blocked&quot;: []
+    },
+    {
+      &quot;page&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/help&quot;,
+      &quot;width&quot;: 768,
+      &quot;blocked&quot;: []
+    },
+    {
+      &quot;page&quot;: &quot;https://gardar.co.il/cdn-cgi/challenge-platform/help&quot;,
+      &quot;width&quot;: 1440,
+      &quot;blocked&quot;: []
+    }
+  ]
+}</pre></details><footer><a href="report.json">הורדת הדוח כ־JSON</a> · צילומים משקפים את סביבת הבדיקה ואת החסימות שהוגדרו. אין תמונת ייחוס מאושרת? ההשוואה החזותית אינה מוכרעת.</footer></main>
+  <script>const update=()=>{let n=0;document.querySelectorAll('.finding').forEach(el=>{el.hidden=!(level.value==='all'||el.dataset.level===level.value)||!(certainty.value==='all'||el.dataset.certainty===certainty.value);if(!el.hidden)n++});document.getElementById('visible-count').textContent=n+' ממצאים מוצגים'};const level=document.getElementById('level'),certainty=document.getElementById('certainty');level.addEventListener('change',update);certainty.addEventListener('change',update);update();</script></body></html>

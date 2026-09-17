@@ -1,0 +1,13 @@
+{
+  "runId": "35219849480",
+  "attempt": "1",
+  "createdAt": "2026-09-17T12:13:34.281Z",
+  "baseURL": "https://gardar.co.il/",
+  "exitCode": 2,
+  "demonstration": false,
+  "issue": 2,
+  "pages": 2,
+  "viewportChecks": 6,
+  "findings": 18,
+  "suspects": 0
+}
